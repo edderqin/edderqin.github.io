@@ -4,6 +4,39 @@
   
     
     <entry>
+      <title>SVN入门</title>
+      <link href="/2019/06/09/svn-ru-men/"/>
+      <url>/2019/06/09/svn-ru-men/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-SVN介绍"><a href="#1-SVN介绍" class="headerlink" title="1.SVN介绍"></a>1.SVN介绍</h2><p>SVN是Subversion的简称，是一个自由开源的版本控制系统。<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN38.png" alt></p><h4 id="1-1操作解释"><a href="#1-1操作解释" class="headerlink" title="1.1操作解释"></a>1.1操作解释</h4><p>checkout：把整个项目代码下载到本地<br>update：将本地的源码更新至服务器的最新版本<br>commit：将本地源码更新内容提交到服务器  </p><h4 id="1-2避免干扰"><a href="#1-2避免干扰" class="headerlink" title="1.2避免干扰"></a>1.2避免干扰</h4><h5 id="1-2-1复制-修改-合并方案-Subversion默认的模式"><a href="#1-2-1复制-修改-合并方案-Subversion默认的模式" class="headerlink" title="1.2.1复制-修改-合并方案(Subversion默认的模式)"></a>1.2.1复制-修改-合并方案(Subversion默认的模式)</h5><p>每一个用户读取库在本地建立私人副本，在本地工作修改，最终合并成为最终版本，需要人工去整合判断正误。</p><h5 id="1-2-2锁定-修改-解锁方案"><a href="#1-2-2锁定-修改-解锁方案" class="headerlink" title="1.2.2锁定-修改-解锁方案"></a>1.2.2锁定-修改-解锁方案</h5><p>在这样的模型里，在一个时间段里配置库的一个文件只允许被一个人修改。 此模式不适合软件开发这种工作。 </p><h4 id="1-3安装位置"><a href="#1-3安装位置" class="headerlink" title="1.3安装位置"></a>1.3安装位置</h4><p>Subversion支持Linux和Windows，更多是安装在Linux下。         </p><h4 id="1-4运行方式"><a href="#1-4运行方式" class="headerlink" title="1.4运行方式"></a>1.4运行方式</h4><p>独立服务器和借助apache运行。</p><h4 id="1-5存储方式"><a href="#1-5存储方式" class="headerlink" title="1.5存储方式"></a>1.5存储方式</h4><p>BDB与FSFS<br>BDB一种事务安全型表类型和FSFS一种不需要数据库的存储系统。<br>因为BDB方式在服务器中断时，有可能锁住数据，所以还是FSFS方式更安全一点。</p><h2 id="2-SVN使用"><a href="#2-SVN使用" class="headerlink" title="2 SVN使用"></a>2 SVN使用</h2><p>window下svn服务器VisualSVN<br>客户端工具TortoiseSVN<br>idea svn插件</p><h3 id="2-1-服务器端VisualSVN安装与配置"><a href="#2-1-服务器端VisualSVN安装与配置" class="headerlink" title="2.1 服务器端VisualSVN安装与配置"></a>2.1 服务器端VisualSVN安装与配置</h3><h4 id="2-1-1官网下载visualSVN"><a href="#2-1-1官网下载visualSVN" class="headerlink" title="2.1.1官网下载visualSVN"></a>2.1.1官网下载visualSVN</h4><p><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN01.png" alt></p><h4 id="2-1-2安装visualSVN"><a href="#2-1-2安装visualSVN" class="headerlink" title="2.1.2安装visualSVN"></a>2.1.2安装visualSVN</h4><p><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN02.png" alt><br>location：安装位置<br>Repositories：仓库位置<br>存储方式使用FSFS<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN03.png" alt></p><h4 id="2-1-3visualSVN使用"><a href="#2-1-3visualSVN使用" class="headerlink" title="2.1.3visualSVN使用"></a>2.1.3visualSVN使用</h4><p>创建组 创建用户<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN04.png" alt><br>分配权限 创建仓库 复制仓库的URL输入浏览器中成功访问<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN05.png" alt><br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN06.png" alt></p><h3 id="2-2-客户端TortoiseSVN安装与配置"><a href="#2-2-客户端TortoiseSVN安装与配置" class="headerlink" title="2.2 客户端TortoiseSVN安装与配置"></a>2.2 客户端TortoiseSVN安装与配置</h3><p>TortoiseSVN是一个基于windows系统的svn客户端图形化界面</p><h4 id="2-2-1-TortoiseSVN的下载与安装"><a href="#2-2-1-TortoiseSVN的下载与安装" class="headerlink" title="2.2.1 TortoiseSVN的下载与安装"></a>2.2.1 TortoiseSVN的下载与安装</h4><p><a href="https://tortoisesvn.net/downloads.html" target="_blank" rel="noopener">https://tortoisesvn.net/downloads.html</a> 官网下载<br>安装注意 选择第二个选项 要不然没有svn.exe文件<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN39.png" alt>    </p><h4 id="2-2-2-TortoiseSVN的使用"><a href="#2-2-2-TortoiseSVN的使用" class="headerlink" title="2.2.2 TortoiseSVN的使用"></a>2.2.2 TortoiseSVN的使用</h4><p>新建文件夹 右键就会看到tortoiseSVN 点击Repo-browser浏览仓库<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN07.png" alt><br>输入认证信息赋予文件夹权限<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN08.png" alt><br>右键setting 清理认证信息<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN09.png" alt></p><h4 id="2-2-3-TortoiseSVN的操作"><a href="#2-2-3-TortoiseSVN的操作" class="headerlink" title="2.2.3 TortoiseSVN的操作"></a>2.2.3 TortoiseSVN的操作</h4><p>通过checkout从仓库下载文件<br>新建文件 右键add 然后commit message内填写修改信息</p><p><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN10.png" alt><br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN11.png" alt>       </p><p><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN12.png" alt><br>update 更新服务器<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN13.png" alt><br>show log查看历史版本<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN14.png" alt></p><h4 id="2-2-4-导入与导出"><a href="#2-2-4-导入与导出" class="headerlink" title="2.2.4 导入与导出"></a>2.2.4 导入与导出</h4><p>Import将本地资源导入到svn服务器<br>Export导出项目，和checkout的区别,它不存在.svn隐藏文件<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN16.png" alt></p><h4 id="2-2-5-冲突问题"><a href="#2-2-5-冲突问题" class="headerlink" title="2.2.5 冲突问题"></a>2.2.5 冲突问题</h4><p>遇到冲突 Edit confilcts解决冲突<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN20.png" alt></p><h2 id="3-IDEA中使用TortoiseSVN"><a href="#3-IDEA中使用TortoiseSVN" class="headerlink" title="3.IDEA中使用TortoiseSVN"></a>3.IDEA中使用TortoiseSVN</h2><h3 id="3-1-setting中配置svn"><a href="#3-1-setting中配置svn" class="headerlink" title="3.1 setting中配置svn"></a>3.1 setting中配置svn</h3><p><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN21.png" alt></p><h3 id="3-2-svn在idea中的基本操作"><a href="#3-2-svn在idea中的基本操作" class="headerlink" title="3.2 svn在idea中的基本操作"></a>3.2 svn在idea中的基本操作</h3><h4 id="3-2-1-将项目checkout"><a href="#3-2-1-将项目checkout" class="headerlink" title="3.2.1 将项目checkout"></a>3.2.1 将项目checkout</h4><p><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN22.png" alt></p><h4 id="3-2-2-按钮作用-update-commit-历史-返回版本"><a href="#3-2-2-按钮作用-update-commit-历史-返回版本" class="headerlink" title="3.2.2 按钮作用 update commit 历史 返回版本"></a>3.2.2 按钮作用 update commit 历史 返回版本</h4><p><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN23.png" alt>    </p><h4 id="3-2-3-将项目提交到SVN"><a href="#3-2-3-将项目提交到SVN" class="headerlink" title="3.2.3 将项目提交到SVN"></a>3.2.3 将项目提交到SVN</h4><p><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN24.png" alt></p><h4 id="3-2-4-忽略设置"><a href="#3-2-4-忽略设置" class="headerlink" title="3.2.4 忽略设置"></a>3.2.4 忽略设置</h4><p><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN30.png" alt>    </p><h4 id="3-2-5-冲突解决"><a href="#3-2-5-冲突解决" class="headerlink" title="3.2.5 冲突解决"></a>3.2.5 冲突解决</h4><p><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN31.png" alt><br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN32.png" alt></p><h3 id="3-3-项目模版"><a href="#3-3-项目模版" class="headerlink" title="3.3 项目模版"></a>3.3 项目模版</h3><h4 id="3-3-1-建立模版项目"><a href="#3-3-1-建立模版项目" class="headerlink" title="3.3.1 建立模版项目"></a>3.3.1 建立模版项目</h4><p>branches：分支项目<br>tags：分支版本（一般设为只读）<br>trunk：项目主干<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN34.png" alt>      </p><h4 id="3-3-2-创建分支"><a href="#3-3-2-创建分支" class="headerlink" title="3.3.2 创建分支"></a>3.3.2 创建分支</h4><p><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN35.png" alt></p><h4 id="3-3-3-主干分支合并"><a href="#3-3-3-主干分支合并" class="headerlink" title="3.3.3 主干分支合并"></a>3.3.3 主干分支合并</h4><p><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN37.png" alt></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 版本控制系统 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 版本控制系统 </tag>
+            
+            <tag> 自由 </tag>
+            
+            <tag> 开源 </tag>
+            
+            <tag> 项目管理 </tag>
+            
+            <tag> 多人开发 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>git搭建与基本操作</title>
       <link href="/2019/06/07/git-da-jian-yu-ji-ben-cao-zuo/"/>
       <url>/2019/06/07/git-da-jian-yu-ji-ben-cao-zuo/</url>
@@ -13,20 +46,20 @@
       
       <categories>
           
-          <category> hexo </category>
+          <category> 版本控制系统 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 分布式版本控制系统 </tag>
-            
-            <tag> git </tag>
-            
             <tag> 项目管理 </tag>
             
             <tag> 多人开发 </tag>
+            
+            <tag> 分布式版本控制系统 </tag>
+            
+            <tag> git </tag>
             
         </tags>
       
