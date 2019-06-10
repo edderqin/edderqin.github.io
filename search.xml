@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>AdminLTE的基本使用</title>
+      <link href="/2019/06/10/adminlte-de-ji-ben-shi-yong/"/>
+      <url>/2019/06/10/adminlte-de-ji-ben-shi-yong/</url>
+      
+        <content type="html"><![CDATA[<h2 id="AdminLTE-基本使用"><a href="#AdminLTE-基本使用" class="headerlink" title="AdminLTE 基本使用"></a>AdminLTE 基本使用</h2><h3 id="1-AdminLTE简介"><a href="#1-AdminLTE简介" class="headerlink" title="1.AdminLTE简介"></a>1.AdminLTE简介</h3><p>AdminLTE是一款建立在bootstrap和jquery之上的开源的模板主题工具。<br><img src="https://camo.githubusercontent.com/e3bbc646d6ff473da2dd6cede2c968846a6982a6/68747470733a2f2f61646d696e6c74652e696f2f41646d696e4c5445322e706e67" alt="image"></p><h3 id="2-AdminLTE下载"><a href="#2-AdminLTE下载" class="headerlink" title="2.AdminLTE下载"></a>2.AdminLTE下载</h3><p>英文版下载地址：<a href="https://github.com/almasaeed2010/AdminLTE" target="_blank" rel="noopener">https://github.com/almasaeed2010/AdminLTE</a><br>中文版下载地址：<a href="https://github.com/itheima2017/adminlte2-itheima" target="_blank" rel="noopener">https://github.com/itheima2017/adminlte2-itheima</a></p><h3 id="3-AdminLTE结构介绍"><a href="#3-AdminLTE结构介绍" class="headerlink" title="3.AdminLTE结构介绍"></a>3.AdminLTE结构介绍</h3><p>AdminLTE依赖于两个框架Bootstrap3与JQuery1.11   </p><p><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/AdminLTE03.png" alt><br>在目录结构中assets、modules、pages、 plugins都是前端开发时所使用到的，最终发布的就是release。所以对于我们使用中文版来说，我们只需要关注release目录下的结构就可以。    </p><h3 id="4-布局皮肤"><a href="#4-布局皮肤" class="headerlink" title="4.布局皮肤"></a>4.布局皮肤</h3><p><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/AdminLTE02.png" alt></p><h4 id="4-1布局"><a href="#4-1布局" class="headerlink" title="4.1布局"></a>4.1布局</h4><p>.wrapper包住了body下的所有代码<br>.main-header里是网站的logo和导航栏的代码<br>.main-sidebar里是用户面板和侧边栏菜单的代码<br>.content-wrapper里是页面的页面和内容区域的代码 .main-footer里是页脚的代码<br>.control-sidebar里是页面右侧侧边栏区域的代码<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/AdminLTE06.png" alt></p><h4 id="4-2布局选项"><a href="#4-2布局选项" class="headerlink" title="4.2布局选项"></a>4.2布局选项</h4><p>fixed：固定<br>layout-boxed：盒子布局<br>ayout-top-nav：顶部隐藏<br>sidebar-collapse：侧边栏隐藏<br>sidebar-mini：侧边栏隐藏时有小图标      </p><h4 id="4-3皮肤"><a href="#4-3皮肤" class="headerlink" title="4.3皮肤"></a>4.3皮肤</h4><p>skin-blue：蓝色<br>skin-black：黑色<br>skin-purple：紫色<br>skin-yellow：黄色<br>skin-red：红色<br>skin-green：绿色<br>以上项我们可以查看start.html页面中查看。    </p><hr><h2 id="在SSM中的使用"><a href="#在SSM中的使用" class="headerlink" title="在SSM中的使用"></a>在SSM中的使用</h2><h3 id="1-导入到HBuilder"><a href="#1-导入到HBuilder" class="headerlink" title="1.导入到HBuilder"></a>1.导入到HBuilder</h3><p><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/AdminLTE01.png" alt></p><h3 id="2-在page目录下选择需要的页面"><a href="#2-在page目录下选择需要的页面" class="headerlink" title="2.在page目录下选择需要的页面"></a>2.在page目录下选择需要的页面</h3><p><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/AdminLTE04.png" alt></p><h3 id="3-对页面进行个性化修改"><a href="#3-对页面进行个性化修改" class="headerlink" title="3.对页面进行个性化修改"></a>3.对页面进行个性化修改</h3><p><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/AdminLTE05.png" alt></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 主题模版 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> AdminLTE </tag>
+            
+            <tag> bootstrap </tag>
+            
+            <tag> 主题模版 </tag>
+            
+            <tag> 后台模版 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>SVN入门</title>
       <link href="/2019/06/09/svn-ru-men/"/>
       <url>/2019/06/09/svn-ru-men/</url>

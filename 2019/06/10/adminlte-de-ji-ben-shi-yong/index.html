@@ -4,10 +4,9 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="SVN入门, edder Blog">
-    <meta name="description" content="1.SVN介绍SVN是Subversion的简称，是一个自由开源的版本控制系统。
-1.1操作解释checkout：把整个项目代码下载到本地update：将本地的源码更新至服务器的最新版本commit：将本地源码更新内容提交到服务器  
-1.">
+    <meta name="keywords" content="AdminLTE的基本使用, edder Blog">
+    <meta name="description" content="AdminLTE 基本使用1.AdminLTE简介AdminLTE是一款建立在bootstrap和jquery之上的开源的模板主题工具。
+2.AdminLTE下载英文版下载地址：https://github.com/almasaeed201">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>SVN入门 | edder Blog</title>
+    <title>AdminLTE的基本使用 | edder Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -241,13 +240,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        SVN入门
+                        AdminLTE的基本使用
                     </div>
                 </div>
             </div>
@@ -358,24 +357,20 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/版本控制系统/" target="_blank">
-                                <span class="chip bg-color">版本控制系统</span>
+                            <a href="/tags/AdminLTE/" target="_blank">
+                                <span class="chip bg-color">AdminLTE</span>
                             </a>
                         
-                            <a href="/tags/自由/" target="_blank">
-                                <span class="chip bg-color">自由</span>
+                            <a href="/tags/bootstrap/" target="_blank">
+                                <span class="chip bg-color">bootstrap</span>
                             </a>
                         
-                            <a href="/tags/开源/" target="_blank">
-                                <span class="chip bg-color">开源</span>
+                            <a href="/tags/主题模版/" target="_blank">
+                                <span class="chip bg-color">主题模版</span>
                             </a>
                         
-                            <a href="/tags/项目管理/" target="_blank">
-                                <span class="chip bg-color">项目管理</span>
-                            </a>
-                        
-                            <a href="/tags/多人开发/" target="_blank">
-                                <span class="chip bg-color">多人开发</span>
+                            <a href="/tags/后台模版/" target="_blank">
+                                <span class="chip bg-color">后台模版</span>
                             </a>
                         
                     </div>
@@ -386,8 +381,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/版本控制系统/" class="post-category" target="_blank">
-                                版本控制系统
+                            <a href="/categories/主题模版/" class="post-category" target="_blank">
+                                主题模版
                             </a>
                         
                     </div>
@@ -398,7 +393,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-06-09
+                    2019-06-10
                 </div>
 
                 
@@ -414,34 +409,18 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1-SVN介绍"><a href="#1-SVN介绍" class="headerlink" title="1.SVN介绍"></a>1.SVN介绍</h2><p>SVN是Subversion的简称，是一个自由开源的版本控制系统。<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN38.png" alt></p>
-<h4 id="1-1操作解释"><a href="#1-1操作解释" class="headerlink" title="1.1操作解释"></a>1.1操作解释</h4><p>checkout：把整个项目代码下载到本地<br>update：将本地的源码更新至服务器的最新版本<br>commit：将本地源码更新内容提交到服务器  </p>
-<h4 id="1-2避免干扰"><a href="#1-2避免干扰" class="headerlink" title="1.2避免干扰"></a>1.2避免干扰</h4><h5 id="1-2-1复制-修改-合并方案-Subversion默认的模式"><a href="#1-2-1复制-修改-合并方案-Subversion默认的模式" class="headerlink" title="1.2.1复制-修改-合并方案(Subversion默认的模式)"></a>1.2.1复制-修改-合并方案(Subversion默认的模式)</h5><p>每一个用户读取库在本地建立私人副本，在本地工作修改，最终合并成为最终版本，需要人工去整合判断正误。</p>
-<h5 id="1-2-2锁定-修改-解锁方案"><a href="#1-2-2锁定-修改-解锁方案" class="headerlink" title="1.2.2锁定-修改-解锁方案"></a>1.2.2锁定-修改-解锁方案</h5><p>在这样的模型里，在一个时间段里配置库的一个文件只允许被一个人修改。 此模式不适合软件开发这种工作。 </p>
-<h4 id="1-3安装位置"><a href="#1-3安装位置" class="headerlink" title="1.3安装位置"></a>1.3安装位置</h4><p>Subversion支持Linux和Windows，更多是安装在Linux下。         </p>
-<h4 id="1-4运行方式"><a href="#1-4运行方式" class="headerlink" title="1.4运行方式"></a>1.4运行方式</h4><p>独立服务器和借助apache运行。</p>
-<h4 id="1-5存储方式"><a href="#1-5存储方式" class="headerlink" title="1.5存储方式"></a>1.5存储方式</h4><p>BDB与FSFS<br>BDB一种事务安全型表类型和FSFS一种不需要数据库的存储系统。<br>因为BDB方式在服务器中断时，有可能锁住数据，所以还是FSFS方式更安全一点。</p>
-<h2 id="2-SVN使用"><a href="#2-SVN使用" class="headerlink" title="2 SVN使用"></a>2 SVN使用</h2><p>window下svn服务器VisualSVN<br>客户端工具TortoiseSVN<br>idea svn插件</p>
-<h3 id="2-1-服务器端VisualSVN安装与配置"><a href="#2-1-服务器端VisualSVN安装与配置" class="headerlink" title="2.1 服务器端VisualSVN安装与配置"></a>2.1 服务器端VisualSVN安装与配置</h3><h4 id="2-1-1官网下载visualSVN"><a href="#2-1-1官网下载visualSVN" class="headerlink" title="2.1.1官网下载visualSVN"></a>2.1.1官网下载visualSVN</h4><p><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN01.png" alt></p>
-<h4 id="2-1-2安装visualSVN"><a href="#2-1-2安装visualSVN" class="headerlink" title="2.1.2安装visualSVN"></a>2.1.2安装visualSVN</h4><p><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN02.png" alt><br>location：安装位置<br>Repositories：仓库位置<br>存储方式使用FSFS<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN03.png" alt></p>
-<h4 id="2-1-3visualSVN使用"><a href="#2-1-3visualSVN使用" class="headerlink" title="2.1.3visualSVN使用"></a>2.1.3visualSVN使用</h4><p>创建组 创建用户<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN04.png" alt><br>分配权限 创建仓库 复制仓库的URL输入浏览器中成功访问<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN05.png" alt><br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN06.png" alt></p>
-<h3 id="2-2-客户端TortoiseSVN安装与配置"><a href="#2-2-客户端TortoiseSVN安装与配置" class="headerlink" title="2.2 客户端TortoiseSVN安装与配置"></a>2.2 客户端TortoiseSVN安装与配置</h3><p>TortoiseSVN是一个基于windows系统的svn客户端图形化界面</p>
-<h4 id="2-2-1-TortoiseSVN的下载与安装"><a href="#2-2-1-TortoiseSVN的下载与安装" class="headerlink" title="2.2.1 TortoiseSVN的下载与安装"></a>2.2.1 TortoiseSVN的下载与安装</h4><p><a href="https://tortoisesvn.net/downloads.html" target="_blank" rel="noopener">https://tortoisesvn.net/downloads.html</a> 官网下载<br>安装注意 选择第二个选项 要不然没有svn.exe文件<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN39.png" alt>    </p>
-<h4 id="2-2-2-TortoiseSVN的使用"><a href="#2-2-2-TortoiseSVN的使用" class="headerlink" title="2.2.2 TortoiseSVN的使用"></a>2.2.2 TortoiseSVN的使用</h4><p>新建文件夹 右键就会看到tortoiseSVN 点击Repo-browser浏览仓库<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN07.png" alt><br>输入认证信息赋予文件夹权限<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN08.png" alt><br>右键setting 清理认证信息<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN09.png" alt></p>
-<h4 id="2-2-3-TortoiseSVN的操作"><a href="#2-2-3-TortoiseSVN的操作" class="headerlink" title="2.2.3 TortoiseSVN的操作"></a>2.2.3 TortoiseSVN的操作</h4><p>通过checkout从仓库下载文件<br>新建文件 右键add 然后commit message内填写修改信息</p>
-<p><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN10.png" alt><br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN11.png" alt>       </p>
-<p><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN12.png" alt><br>update 更新服务器<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN13.png" alt><br>show log查看历史版本<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN14.png" alt></p>
-<h4 id="2-2-4-导入与导出"><a href="#2-2-4-导入与导出" class="headerlink" title="2.2.4 导入与导出"></a>2.2.4 导入与导出</h4><p>Import将本地资源导入到svn服务器<br>Export导出项目，和checkout的区别,它不存在.svn隐藏文件<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN16.png" alt></p>
-<h4 id="2-2-5-冲突问题"><a href="#2-2-5-冲突问题" class="headerlink" title="2.2.5 冲突问题"></a>2.2.5 冲突问题</h4><p>遇到冲突 Edit confilcts解决冲突<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN20.png" alt></p>
-<h2 id="3-IDEA中使用TortoiseSVN"><a href="#3-IDEA中使用TortoiseSVN" class="headerlink" title="3.IDEA中使用TortoiseSVN"></a>3.IDEA中使用TortoiseSVN</h2><h3 id="3-1-setting中配置svn"><a href="#3-1-setting中配置svn" class="headerlink" title="3.1 setting中配置svn"></a>3.1 setting中配置svn</h3><p><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN21.png" alt></p>
-<h3 id="3-2-svn在idea中的基本操作"><a href="#3-2-svn在idea中的基本操作" class="headerlink" title="3.2 svn在idea中的基本操作"></a>3.2 svn在idea中的基本操作</h3><h4 id="3-2-1-将项目checkout"><a href="#3-2-1-将项目checkout" class="headerlink" title="3.2.1 将项目checkout"></a>3.2.1 将项目checkout</h4><p><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN22.png" alt></p>
-<h4 id="3-2-2-按钮作用-update-commit-历史-返回版本"><a href="#3-2-2-按钮作用-update-commit-历史-返回版本" class="headerlink" title="3.2.2 按钮作用 update commit 历史 返回版本"></a>3.2.2 按钮作用 update commit 历史 返回版本</h4><p><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN23.png" alt>    </p>
-<h4 id="3-2-3-将项目提交到SVN"><a href="#3-2-3-将项目提交到SVN" class="headerlink" title="3.2.3 将项目提交到SVN"></a>3.2.3 将项目提交到SVN</h4><p><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN24.png" alt></p>
-<h4 id="3-2-4-忽略设置"><a href="#3-2-4-忽略设置" class="headerlink" title="3.2.4 忽略设置"></a>3.2.4 忽略设置</h4><p><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN30.png" alt>    </p>
-<h4 id="3-2-5-冲突解决"><a href="#3-2-5-冲突解决" class="headerlink" title="3.2.5 冲突解决"></a>3.2.5 冲突解决</h4><p><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN31.png" alt><br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN32.png" alt></p>
-<h3 id="3-3-项目模版"><a href="#3-3-项目模版" class="headerlink" title="3.3 项目模版"></a>3.3 项目模版</h3><h4 id="3-3-1-建立模版项目"><a href="#3-3-1-建立模版项目" class="headerlink" title="3.3.1 建立模版项目"></a>3.3.1 建立模版项目</h4><p>branches：分支项目<br>tags：分支版本（一般设为只读）<br>trunk：项目主干<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN34.png" alt>      </p>
-<h4 id="3-3-2-创建分支"><a href="#3-3-2-创建分支" class="headerlink" title="3.3.2 创建分支"></a>3.3.2 创建分支</h4><p><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN35.png" alt></p>
-<h4 id="3-3-3-主干分支合并"><a href="#3-3-3-主干分支合并" class="headerlink" title="3.3.3 主干分支合并"></a>3.3.3 主干分支合并</h4><p><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN37.png" alt></p>
+                <h2 id="AdminLTE-基本使用"><a href="#AdminLTE-基本使用" class="headerlink" title="AdminLTE 基本使用"></a>AdminLTE 基本使用</h2><h3 id="1-AdminLTE简介"><a href="#1-AdminLTE简介" class="headerlink" title="1.AdminLTE简介"></a>1.AdminLTE简介</h3><p>AdminLTE是一款建立在bootstrap和jquery之上的开源的模板主题工具。<br><img src="https://camo.githubusercontent.com/e3bbc646d6ff473da2dd6cede2c968846a6982a6/68747470733a2f2f61646d696e6c74652e696f2f41646d696e4c5445322e706e67" alt="image"></p>
+<h3 id="2-AdminLTE下载"><a href="#2-AdminLTE下载" class="headerlink" title="2.AdminLTE下载"></a>2.AdminLTE下载</h3><p>英文版下载地址：<a href="https://github.com/almasaeed2010/AdminLTE" target="_blank" rel="noopener">https://github.com/almasaeed2010/AdminLTE</a><br>中文版下载地址：<a href="https://github.com/itheima2017/adminlte2-itheima" target="_blank" rel="noopener">https://github.com/itheima2017/adminlte2-itheima</a></p>
+<h3 id="3-AdminLTE结构介绍"><a href="#3-AdminLTE结构介绍" class="headerlink" title="3.AdminLTE结构介绍"></a>3.AdminLTE结构介绍</h3><p>AdminLTE依赖于两个框架Bootstrap3与JQuery1.11   </p>
+<p><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/AdminLTE03.png" alt><br>在目录结构中assets、modules、pages、 plugins都是前端开发时所使用到的，最终发布的就是release。所以对于我们使用中文版来说，我们只需要关注release目录下的结构就可以。    </p>
+<h3 id="4-布局皮肤"><a href="#4-布局皮肤" class="headerlink" title="4.布局皮肤"></a>4.布局皮肤</h3><p><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/AdminLTE02.png" alt></p>
+<h4 id="4-1布局"><a href="#4-1布局" class="headerlink" title="4.1布局"></a>4.1布局</h4><p>.wrapper包住了body下的所有代码<br>.main-header里是网站的logo和导航栏的代码<br>.main-sidebar里是用户面板和侧边栏菜单的代码<br>.content-wrapper里是页面的页面和内容区域的代码 .main-footer里是页脚的代码<br>.control-sidebar里是页面右侧侧边栏区域的代码<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/AdminLTE06.png" alt></p>
+<h4 id="4-2布局选项"><a href="#4-2布局选项" class="headerlink" title="4.2布局选项"></a>4.2布局选项</h4><p>fixed：固定<br>layout-boxed：盒子布局<br>ayout-top-nav：顶部隐藏<br>sidebar-collapse：侧边栏隐藏<br>sidebar-mini：侧边栏隐藏时有小图标      </p>
+<h4 id="4-3皮肤"><a href="#4-3皮肤" class="headerlink" title="4.3皮肤"></a>4.3皮肤</h4><p>skin-blue：蓝色<br>skin-black：黑色<br>skin-purple：紫色<br>skin-yellow：黄色<br>skin-red：红色<br>skin-green：绿色<br>以上项我们可以查看start.html页面中查看。    </p>
+<hr>
+<h2 id="在SSM中的使用"><a href="#在SSM中的使用" class="headerlink" title="在SSM中的使用"></a>在SSM中的使用</h2><h3 id="1-导入到HBuilder"><a href="#1-导入到HBuilder" class="headerlink" title="1.导入到HBuilder"></a>1.导入到HBuilder</h3><p><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/AdminLTE01.png" alt></p>
+<h3 id="2-在page目录下选择需要的页面"><a href="#2-在page目录下选择需要的页面" class="headerlink" title="2.在page目录下选择需要的页面"></a>2.在page目录下选择需要的页面</h3><p><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/AdminLTE04.png" alt></p>
+<h3 id="3-对页面进行个性化修改"><a href="#3-对页面进行个性化修改" class="headerlink" title="3.对页面进行个性化修改"></a>3.对页面进行个性化修改</h3><p><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/AdminLTE05.png" alt></p>
 
             </div>
             <hr>
@@ -597,9 +576,9 @@
             </div>
             <br>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">
-                    《SVN入门》
+                    《AdminLTE的基本使用》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/06/09/svn-ru-men/" property="cc:attributionName" rel="cc:attributionURL">
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/06/10/adminlte-de-ji-ben-shi-yong/" property="cc:attributionName" rel="cc:attributionURL">
                 edder
             </a> 采用
             <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
@@ -640,7 +619,8 @@
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2019/06/10/adminlte-de-ji-ben-shi-yong/">
                     <div class="card-image">
@@ -659,9 +639,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-10
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-10
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -674,6 +654,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -704,28 +685,26 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/06/07/git-da-jian-yu-ji-ben-cao-zuo/">
+                <a href="/2019/06/09/svn-ru-men/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="git搭建与基本操作">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="SVN入门">
                         
-                        <span class="card-title">git搭建与基本操作</span>
+                        <span class="card-title">SVN入门</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Git理论1,1git的概述git是一个开源的分布式版本控制系统，可以借助github托管项目代码，进行团队开发。
-1.2git网址国内码云国外github
-1.3 Git原理图
-Git实战使用前要安装git，并配置环境变量。
-2.1工作时
+                            1.SVN介绍SVN是Subversion的简称，是一个自由开源的版本控制系统。
+1.1操作解释checkout：把整个项目代码下载到本地update：将本地的源码更新至服务器的最新版本commit：将本地源码更新内容提交到服务器  
+1.
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-07
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-09
                             </span>
                         <span class="publish-author">
                             
@@ -742,20 +721,24 @@ Git实战使用前要安装git，并配置环境变量。
                 
                 <div class="card-action article-tags">
                     
+                    <a href="/tags/版本控制系统/" target="_blank">
+                        <span class="chip bg-color">版本控制系统</span>
+                    </a>
+                    
+                    <a href="/tags/自由/" target="_blank">
+                        <span class="chip bg-color">自由</span>
+                    </a>
+                    
+                    <a href="/tags/开源/" target="_blank">
+                        <span class="chip bg-color">开源</span>
+                    </a>
+                    
                     <a href="/tags/项目管理/" target="_blank">
                         <span class="chip bg-color">项目管理</span>
                     </a>
                     
                     <a href="/tags/多人开发/" target="_blank">
                         <span class="chip bg-color">多人开发</span>
-                    </a>
-                    
-                    <a href="/tags/分布式版本控制系统/" target="_blank">
-                        <span class="chip bg-color">分布式版本控制系统</span>
-                    </a>
-                    
-                    <a href="/tags/git/" target="_blank">
-                        <span class="chip bg-color">git</span>
                     </a>
                     
                 </div>
