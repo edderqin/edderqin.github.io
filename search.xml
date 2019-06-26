@@ -4,6 +4,39 @@
   
     
     <entry>
+      <title>Java基础语法（一）</title>
+      <link href="/2019/06/26/java-ji-chu-yu-fa-yi/"/>
+      <url>/2019/06/26/java-ji-chu-yu-fa-yi/</url>
+      
+        <content type="html"><![CDATA[<h3 id="1-方法重载（-overlord-）"><a href="#1-方法重载（-overlord-）" class="headerlink" title="1.方法重载（ overlord ）"></a>1.方法重载（ overlord ）</h3><h4 id="1-1为什么使用方法重载"><a href="#1-1为什么使用方法重载" class="headerlink" title="1.1为什么使用方法重载"></a>1.1为什么使用方法重载</h4><p>对于功能类似的方法来说，因为参数列表不一样，却需要记住那么多不同的方法名称过于麻烦。</p><h4 id="1-2方法重载概念"><a href="#1-2方法重载概念" class="headerlink" title="1.2方法重载概念"></a>1.2方法重载概念</h4><p>方法重载是指多个方法名称一样但参数列表不一样。只要记住一个方法名称，就能实现类似的多个功能。</p><h3 id="2-数组（array）"><a href="#2-数组（array）" class="headerlink" title="2.数组（array）"></a>2.数组（array）</h3><h4 id="2-1数组概念"><a href="#2-1数组概念" class="headerlink" title="2.1数组概念"></a>2.1数组概念</h4><p>数组是一种容器，可以同时存放多个数据值。</p><h4 id="2-2数组特点"><a href="#2-2数组特点" class="headerlink" title="2.2数组特点"></a>2.2数组特点</h4><p>1.数组是一种引用数据类型（除了八大基本数据类型都是引用类型）。<br>2.数组当中的多个数据，类型必须统一。<br>3.数组的长度在程序运行期间不可改变。<br>4.数组动态初始化时会有一个默认值。</p><h4 id="2-3内存"><a href="#2-3内存" class="headerlink" title="2.3内存"></a>2.3内存</h4><p>java的内存需要划分成五个部分<br>区域名称 | 作用<br>—|—<br>栈（stack） |存放的都是方法中的局部变量。方法的运行一定要在栈当中。<br>堆（Heap） | 凡是new出来的东西，都在堆当中。<br>方法区（Method Area） | 存储.class相关信息，包含方法的信息。<br>本地方法栈（native method stack） | JVM使用操作系统相关，与我们无关。<br>寄存器（Register） | 与cpu相关。性能非常高。 </p><p><strong>栈（stack）</strong>：存放的都是方法中的局部变量。方法的运行一定要在栈当中。<br>    局部变量：方法的参数，或者是方法｛｝内部的变量。<br>    作用域：一旦超出作用域，立刻从栈内存当中消失。<br><strong>堆（Heap）</strong>：凡是new出来的东西，都在堆当中。<br>    堆内存里面的东西都有一个地址值：16进制。<br>    堆里面的数据都有默认值。<br><strong>方法区（Method Area）</strong>：存储.class相关信息，包含方法的信息。<br><strong>本地方法栈（native method stack）</strong>：JVM使用操作系统相关，与我们无关。<br><strong>寄存器（Register）</strong>：与cpu相关。性能非常高。<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/1JAVA02.png" alt></p><h4 id="2-4数组的空指针异常"><a href="#2-4数组的空指针异常" class="headerlink" title="2.4数组的空指针异常"></a>2.4数组的空指针异常</h4><p>所有的引用类型变量，都可以赋值为一个null值。但代表期中什么都没有。<br>数组必须进行new初始化才能使用其中的元素。<br>如果只是赋值了一个null，没有进行new创建，那么将会发生空指针异常 NullPointerException</p><h3 id="3-JVM-JRE-JDK"><a href="#3-JVM-JRE-JDK" class="headerlink" title="3.JVM JRE JDK"></a>3.JVM JRE JDK</h3><p><strong>JVM（Java Virtual Machine ）</strong>：Java虚拟机，简称JVM，是运行所有Java程序的假想计算机，是Java程序的 运行环境，是Java 最具吸引力的特性之一。我们编写的Java代码，都运行在JVM上。跨平台。<br><strong>JRE  (Java Runtime Environment)</strong> ：是Java程序的运行时环境，包含JVM和运行时所需要的核心类库。<br><strong>JDK  (Java Development Kit)</strong>：是Java程序开发工具包，包含JRE和开发工具。</p><h3 id="4-跳出循环"><a href="#4-跳出循环" class="headerlink" title="4.跳出循环"></a>4.跳出循环</h3><p><strong>break</strong>：终止switch语句或者是循环。<br><strong>continue</strong>    ：结束本次循环，继续下一次循环。   </p><h3 id="5-数据类型"><a href="#5-数据类型" class="headerlink" title="5.数据类型"></a>5.数据类型</h3><p><strong>基本数据类型</strong>：字节型，整型，短整型，长整型，单精度浮点型，双精度浮点型，字符型，布尔型。<br><strong>引用数据类型</strong>：类，数组，接口。<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/1JAVA01.png" alt></p><h3 id="6-面向对象"><a href="#6-面向对象" class="headerlink" title="6.面向对象"></a>6.面向对象</h3><table><thead><tr><th>名称</th><th>概念</th></tr></thead><tbody><tr><td>面向过程</td><td>当需要实现某项功能时，每个具体的步骤都需要亲力亲为。</td></tr><tr><td>面向对象（偷懒）</td><td>当需要实现某项功能，不关心具体步骤，找一个能实现该功能的人，来帮我做事，</td></tr><tr><td>#### 6.1类和对象</td><td></td></tr><tr><td><strong>类</strong>：是一组相关属性和行为的结合。可以看成是一类事物的模版，使用事物的属性特征和行为特征来描述该类事物。</td><td></td></tr><tr><td>属性：就是该事物的状态信息。</td><td></td></tr><tr><td>行为：就是该事物能够做什么。</td><td></td></tr><tr><td><strong>对象</strong>：是一类事物的具体体现。对象是类的一个实例，必然具备该类事物的属性和行为。</td><td></td></tr><tr><td><strong>类和对象的关系</strong>：类是对一类事物的描述，是抽象的。 对象是一类事物的实例，是具体的。 类是对象的模板，对象是类的实体。</td><td></td></tr></tbody></table><h4 id="6-2对象的内存图"><a href="#6-2对象的内存图" class="headerlink" title="6.2对象的内存图"></a>6.2对象的内存图</h4><p><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/1JAVA03.png" alt></p><h4 id="6-3成员变量和局部变量"><a href="#6-3成员变量和局部变量" class="headerlink" title="6.3成员变量和局部变量"></a>6.3成员变量和局部变量</h4><h5 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h5><p>局部变量：只有方法当中才可以使用，出了方法就不能用了。<br>成员变量：在类当中整个类都可以通用。         </p><h5 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h5><p>局部变量：没有默认值。<br>成员变量：会有默认值。         </p><h5 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h5><p>局部变量：在方法内部。<br>成员变量：在方法外部，直接写在类当中。</p><h5 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h5><p>方法的参数是局部变量<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/1JAVA04.png" alt></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> java基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 方法重载 </tag>
+            
+            <tag> 数组 </tag>
+            
+            <tag> java内存 </tag>
+            
+            <tag> JVM JRE JDK </tag>
+            
+            <tag> 面向对象 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>AdminLTE的基本使用</title>
       <link href="/2019/06/10/adminlte-de-ji-ben-shi-yong/"/>
       <url>/2019/06/10/adminlte-de-ji-ben-shi-yong/</url>
@@ -51,15 +84,15 @@
       
         <tags>
             
+            <tag> 项目管理 </tag>
+            
+            <tag> 多人开发 </tag>
+            
             <tag> 版本控制系统 </tag>
             
             <tag> 自由 </tag>
             
             <tag> 开源 </tag>
-            
-            <tag> 项目管理 </tag>
-            
-            <tag> 多人开发 </tag>
             
         </tags>
       
@@ -84,13 +117,13 @@
       
         <tags>
             
-            <tag> 项目管理 </tag>
-            
-            <tag> 多人开发 </tag>
-            
             <tag> 分布式版本控制系统 </tag>
             
             <tag> git </tag>
+            
+            <tag> 项目管理 </tag>
+            
+            <tag> 多人开发 </tag>
             
         </tags>
       
