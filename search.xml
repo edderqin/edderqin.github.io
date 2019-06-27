@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>操作系统复习题（大题）</title>
+      <link href="/2019/06/27/cao-zuo-xi-tong-fu-xi-ti/"/>
+      <url>/2019/06/27/cao-zuo-xi-tong-fu-xi-ti/</url>
+      
+        <content type="html"><![CDATA[<h3 id="1-pv操作"><a href="#1-pv操作" class="headerlink" title="1.pv操作"></a>1.pv操作</h3><p>p：申请资源<br>v：释放资源</p><h4 id="信号量机制"><a href="#信号量机制" class="headerlink" title="信号量机制"></a>信号量机制</h4><p>信号量是一个int型的变量<br>当信号量大于零时表示当前系统中某类资源的个数<br>当信号量小于零时表示当前系统中等待某类资源的个数    </p><pre><code>假定一个阅览室最多可容纳100人，读者进入和离开阅览室时都必须在门口的一个登记表进行登记，而且每次只允许一个进行登记操作，请用P、V操作实现并发的读者进程间的同步问题。</code></pre><p>先找临界资源<br>临界资源：<br>1.座位：s=100<br>2.登记表：m=1<br>注意pv操作成对出现</p><p>解：<br>s=100<br>m=1<br>void main{<br>&emsp;    cobegin<br>&emsp;&emsp;    readeri(i=1,2,3….n)<br>&emsp;coend<br>}</p><p>readeri(){<br>&emsp;    p(s);<br>&emsp;&emsp;        p(m);<br>&emsp;&emsp;阅览室有空位置找登记表进行登记<br>&emsp;&emsp;        v(m);<br>&emsp;&emsp;放回登记表学习<br>&emsp;&emsp;        p(m);<br>&emsp;&emsp;找出登记项删除登记<br>&emsp;&emsp;        v(m);<br>&emsp;&emsp;走出阅览室<br>&emsp;    V(s);        </p><p>}</p><h3 id="2-作业调度、进程调度、内存分配和设备分配"><a href="#2-作业调度、进程调度、内存分配和设备分配" class="headerlink" title="2.作业调度、进程调度、内存分配和设备分配"></a>2.作业调度、进程调度、内存分配和设备分配</h3><p><a href="https://blog.csdn.net/HaoDaWang/article/details/78598178" target="_blank" rel="noopener">作业调度的五种算法</a><br>某系统采用不能移动已在主存中作业的可变分区方式管理主存，现在有供用户使用的主存空间100K，系统配有4台磁带机，现有一作业序列：<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/os01.png" alt><br>该系统采用多道程序设计技术，对磁带机采用静态分配，请分别写出采用先来先服务和短作业优先算法选中作业执行的次序和平均周转时间。    </p><p>根据题意，我们需要先分析出各种算法的运行情况。<br>(1) 先来先服务算法的运行情况<br>先来先服务的运行情况            </p><table><thead><tr><th>序号</th><th>提交时间</th><th>进入主存时间</th><th>开始计算时间</th><th>结束计算时间</th><th>周转时间</th></tr></thead><tbody><tr><td>1</td><td>10:00</td><td>10:00</td><td>10:00</td><td>10:25</td><td>25</td></tr><tr><td>2</td><td>10:20</td><td>10:20</td><td>10:25</td><td>10:55</td><td>35</td></tr><tr><td>3</td><td>10:35</td><td>10:35</td><td>10:50</td><td>11:15</td><td>40</td></tr><tr><td>4</td><td>10:40</td><td>10:55</td><td>11:15</td><td>11:30</td><td>50</td></tr><tr><td>5</td><td>10:30</td><td>11:30</td><td>11:30</td><td>11:40</td><td>70</td></tr><tr><td>所以，平均周转时间为：(25+35+40+50+70)/5=44min。</td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table><p>(2) 按计算时间最短者优先算法。<br>序号 | 提交时间 | 进入主存时间 | 开始计算时间 | 结束计算时间 | 周转时间<br>—|—|—|—|—|—<br>1 | 10:00 | 10:00 | 10:00 | 10:25 | 25<br>2 | 10:20 | 10:20 | 10:25 | 10:55 | 35<br>3 | 10:35 | 10:35 | 11:10 | 11:30 | 55<br>4 | 10:40 | 10:55 | 10:55 | 11:10 | 30<br>5 | 10:30 | 11:30 | 11:30 | 11:40 | 70<br>所以，平均周转时间为：(25+35+30+55+70)/5=43min。</p><h3 id="3-银行家算法"><a href="#3-银行家算法" class="headerlink" title="3.银行家算法"></a>3.银行家算法</h3><p>假定系统中有五个进程{P0, P1, P2, P3, P4}和三类资源{A, B, C}，各种资源的数量分别为10、5、7，在T0时刻的资源分配情况如图所示。<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/os02.png" alt></p><p>(1) T0时刻是否安全状态？若是，请给出安全序列。<br>(2)在T0时刻若进程P1请求资源（1，0，2），是否能实施资源分配？为什么？<br>(3)在（2）的基础上，若进程P4请求资源（3，3，0），是否能实施资源分配？为什么？<br>(4)在（3）的基础上，若进程P0请求资源 （0，2，0），是否能实施资源分配？为什么？           </p><p>①安全序列为{P1, P3, P4, P2, P0}<br>②能实施资源分配Request1(1, 0, 2)≤Need1(1, 2, 2) &emsp; Request1(1, 0, 2)≤Available(3, 3, 2) &emsp;<br>&emsp;假定可为P1分配资源，利用安全性算法检查，存在安全序列为{P1, P3, P4, P0 P2}<br>③P4发出请求向量Request4(3，3，0)，系统按银行家算法进行检查：<br> Request4(3，3，0)≤Need4(4，3，1)；Request4(3，3，0)＞Available(2，3，0)，则不能实施资源分配，让P4等待。<br> ④P0发出请求向量Request0(0，2，0)，系统按银行家算法进行检查： Request0(0，2，0)≤Need0(7，4，3)；Request0(0，2，0)≤Available(2，3，0)； 先假定可为P0分配资源，利用安全性算法检查，不存在安全序列 ，</p><h3 id="4-页面置换算法"><a href="#4-页面置换算法" class="headerlink" title="4.页面置换算法"></a>4.页面置换算法</h3><h4 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h4><p>在一个请求分页存储管理系统中，一个作业的页面走向为4、3、2、1、4、3、5、4、3、2、1、5，当分配给该作业的物理块数分别为3时，试计算采用下述页面淘汰算法时的缺页率（假设开始执行时主存中没有页面），并比较所得结果。          </p><pre><code>最佳置换淘汰算法（OPT）。          先进先出淘汰算法（FIFO）。         最近最久未使用淘汰算法(LRU)。</code></pre><p><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/os03.png" alt><br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/os04.png" alt><br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/os05.png" alt></p><h4 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h4><p>某页式虚存储系统的物理空间共3KB，页面大小为1KB。一进程按下列地址顺序引用内存单元：3635、3632、1140、3584、2892、3640、0040、2148、1700、2145、3209、0000、1102、1100。如果上述数字均为十进制数，而内存中尚未装入任何页。给出使用LRU算法是的缺页次数，并与FIFO是的情况进行比较。<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/os06.png" alt></p><h4 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h4><p>某采用页式存储管理的系统中，接收了一个作业，作业执行时依次访问的页为：1，2，3，4，2，1，5，6，2，1，2，3，7。系统在主存中分配给该作业4个物理快，若开始四页已先装入主存（即作业执行前已将1、2、3、4页调入内存中，1页最先进入内存，4页最后装入内存）</p><pre><code>试分别计算采用FIFO、LRU和OPT算法时，作业执行过程中会产生多少次缺页中断 、缺页率并写出依次产生缺页中断后应淘汰的页</code></pre><p>采用先进先出调度算法会产生6次缺页中断，依次淘汰的页是1、2、3、4、5、6.<br>采用最近最少用调度算法会产生4次缺页中断，依次淘汰的页是3、4、5、6.</p><h4 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h4><p>设某分页系统中，页面大小为100字节，一个程序大小为1200字节，逻辑地址访问序列如下：10，205，110，735，603，50，815，314，432，320，225，80，130，270。系统为其分配4个主存块。</p><pre><code>试用LRU、OPT和FIFO算法算出各个页面置换算法的命中率</code></pre><p><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/os07.png" alt><br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/os08.png" alt></p><h3 id="5-地址转换"><a href="#5-地址转换" class="headerlink" title="5.地址转换"></a>5.地址转换</h3><h4 id="1-1"><a href="#1-1" class="headerlink" title="1."></a>1.</h4><p>在一分页存储管理系统中，逻辑地址长度为16位，页面大小为4096B，现有一逻辑地址为2F6AH，且第0、1、2页依次存放在物理块5、10、11中，问相应的物理地址为多少？       </p><p> 答：页号：4位 ，页内偏移地址：12位<br>        2F6AH=（0010   111101101010）<br>      页号2 存在第11块中（1011   111101101010）<br>   物理地址：BF6AH</p><h4 id="2-1"><a href="#2-1" class="headerlink" title="2."></a>2.</h4><p>设有一页式存储管理系统，向用户提供的逻辑地址空间最大为16页，每页2048B，内存总共有8个存储块，试问逻辑地址至少应为多少位？内存空间有多大？</p><p>  答：211=2048    24=16 ，所以逻辑地址至少15位。<br>内存空间：8*2048=16K    </p><h3 id="6-磁盘调度算法"><a href="#6-磁盘调度算法" class="headerlink" title="6.磁盘调度算法"></a>6.磁盘调度算法</h3><p>若磁头的当前位置为100磁道，磁头正向磁道增加方向移动。现有一磁盘读写请求队列：23，376，205，132，19，61，190，398，29，4，18，40。若采用先来先服务、最短寻道时间优先和扫描算法：<br>试计算出平均寻道长度各为多少？<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/os09.png" alt></p><h3 id="7-物理块优化"><a href="#7-物理块优化" class="headerlink" title="7.物理块优化"></a>7.物理块优化</h3><h4 id="1-2"><a href="#1-2" class="headerlink" title="1."></a>1.</h4><p>假定磁盘转速为20ms/r，磁盘格式化时每个磁道被划分为10个扇区，今有10个逻辑记录（每个记录的大型刚好与扇区大小相等）存放在同一磁道上，处理程序每次从磁盘读出一个记录后要花4ms进行处理，现要求顺序处理这10个记录，若磁头现在正处于首个逻辑记录的始点位置。<br>请问：<br>按逆时针方向安排10个逻辑记录（磁盘顺时针方向转），处理程序处理完这10个记录所需要的时间是多少<br>按最优化分布重新安排这10个逻辑记录，写出记录的安排，并计算出所需要处理的时间     </p><p><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/os10.png" alt></p><h4 id="2-2"><a href="#2-2" class="headerlink" title="2."></a>2.</h4><p>如果磁盘的每个磁道分成9个块，现有一个文件共有  A，B，…，I         9个记录，每个记录的大小与块的大小相等，设磁盘转速为27ms/r，每读出一块后需要2ms的处理时间。若忽略其他辅助时间，试问<br>如果顺序存放这些记录并顺序读取，处理该文件要多少时间？<br>如果要顺序读取该文件，记录如何存放处理时间最短？<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/os11.png" alt></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 操作系统 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 银行家算法 </tag>
+            
+            <tag> PV操作 </tag>
+            
+            <tag> 调度算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Java基础语法（一）</title>
       <link href="/2019/06/26/java-ji-chu-yu-fa-yi/"/>
       <url>/2019/06/26/java-ji-chu-yu-fa-yi/</url>
@@ -84,15 +113,15 @@
       
         <tags>
             
-            <tag> 项目管理 </tag>
-            
-            <tag> 多人开发 </tag>
-            
             <tag> 版本控制系统 </tag>
             
             <tag> 自由 </tag>
             
             <tag> 开源 </tag>
+            
+            <tag> 项目管理 </tag>
+            
+            <tag> 多人开发 </tag>
             
         </tags>
       
@@ -117,13 +146,13 @@
       
         <tags>
             
-            <tag> 分布式版本控制系统 </tag>
-            
-            <tag> git </tag>
-            
             <tag> 项目管理 </tag>
             
             <tag> 多人开发 </tag>
+            
+            <tag> git </tag>
+            
+            <tag> 分布式版本控制系统 </tag>
             
         </tags>
       
@@ -148,9 +177,9 @@
       
         <tags>
             
-            <tag> git </tag>
-            
             <tag> hexo </tag>
+            
+            <tag> git </tag>
             
             <tag> 搭建博客 </tag>
             

@@ -4,10 +4,10 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="SVN入门, edder Blog">
-    <meta name="description" content="1.SVN介绍SVN是Subversion的简称，是一个自由开源的版本控制系统。
-1.1操作解释checkout：把整个项目代码下载到本地update：将本地的源码更新至服务器的最新版本commit：将本地源码更新内容提交到服务器  
-1.">
+    <meta name="keywords" content="操作系统复习题（大题）, edder Blog">
+    <meta name="description" content="1.pv操作p：申请资源v：释放资源
+信号量机制信号量是一个int型的变量当信号量大于零时表示当前系统中某类资源的个数当信号量小于零时表示当前系统中等待某类资源的个数    
+假定一个阅览室最多可容纳100人，读者进入和离开阅览室时都必须在">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +15,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>SVN入门 | edder Blog</title>
+    <title>操作系统复习题（大题） | edder Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -241,13 +241,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        SVN入门
+                        操作系统复习题（大题）
                     </div>
                 </div>
             </div>
@@ -358,24 +358,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/版本控制系统/" target="_blank">
-                                <span class="chip bg-color">版本控制系统</span>
+                            <a href="/tags/银行家算法/" target="_blank">
+                                <span class="chip bg-color">银行家算法</span>
                             </a>
                         
-                            <a href="/tags/自由/" target="_blank">
-                                <span class="chip bg-color">自由</span>
+                            <a href="/tags/PV操作/" target="_blank">
+                                <span class="chip bg-color">PV操作</span>
                             </a>
                         
-                            <a href="/tags/开源/" target="_blank">
-                                <span class="chip bg-color">开源</span>
-                            </a>
-                        
-                            <a href="/tags/项目管理/" target="_blank">
-                                <span class="chip bg-color">项目管理</span>
-                            </a>
-                        
-                            <a href="/tags/多人开发/" target="_blank">
-                                <span class="chip bg-color">多人开发</span>
+                            <a href="/tags/调度算法/" target="_blank">
+                                <span class="chip bg-color">调度算法</span>
                             </a>
                         
                     </div>
@@ -386,8 +378,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/版本控制系统/" class="post-category" target="_blank">
-                                版本控制系统
+                            <a href="/categories/操作系统/" class="post-category" target="_blank">
+                                操作系统
                             </a>
                         
                     </div>
@@ -398,7 +390,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-06-09
+                    2019-06-27
                 </div>
 
                 
@@ -414,34 +406,98 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1-SVN介绍"><a href="#1-SVN介绍" class="headerlink" title="1.SVN介绍"></a>1.SVN介绍</h2><p>SVN是Subversion的简称，是一个自由开源的版本控制系统。<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN38.png" alt></p>
-<h4 id="1-1操作解释"><a href="#1-1操作解释" class="headerlink" title="1.1操作解释"></a>1.1操作解释</h4><p>checkout：把整个项目代码下载到本地<br>update：将本地的源码更新至服务器的最新版本<br>commit：将本地源码更新内容提交到服务器  </p>
-<h4 id="1-2避免干扰"><a href="#1-2避免干扰" class="headerlink" title="1.2避免干扰"></a>1.2避免干扰</h4><h5 id="1-2-1复制-修改-合并方案-Subversion默认的模式"><a href="#1-2-1复制-修改-合并方案-Subversion默认的模式" class="headerlink" title="1.2.1复制-修改-合并方案(Subversion默认的模式)"></a>1.2.1复制-修改-合并方案(Subversion默认的模式)</h5><p>每一个用户读取库在本地建立私人副本，在本地工作修改，最终合并成为最终版本，需要人工去整合判断正误。</p>
-<h5 id="1-2-2锁定-修改-解锁方案"><a href="#1-2-2锁定-修改-解锁方案" class="headerlink" title="1.2.2锁定-修改-解锁方案"></a>1.2.2锁定-修改-解锁方案</h5><p>在这样的模型里，在一个时间段里配置库的一个文件只允许被一个人修改。 此模式不适合软件开发这种工作。 </p>
-<h4 id="1-3安装位置"><a href="#1-3安装位置" class="headerlink" title="1.3安装位置"></a>1.3安装位置</h4><p>Subversion支持Linux和Windows，更多是安装在Linux下。         </p>
-<h4 id="1-4运行方式"><a href="#1-4运行方式" class="headerlink" title="1.4运行方式"></a>1.4运行方式</h4><p>独立服务器和借助apache运行。</p>
-<h4 id="1-5存储方式"><a href="#1-5存储方式" class="headerlink" title="1.5存储方式"></a>1.5存储方式</h4><p>BDB与FSFS<br>BDB一种事务安全型表类型和FSFS一种不需要数据库的存储系统。<br>因为BDB方式在服务器中断时，有可能锁住数据，所以还是FSFS方式更安全一点。</p>
-<h2 id="2-SVN使用"><a href="#2-SVN使用" class="headerlink" title="2 SVN使用"></a>2 SVN使用</h2><p>window下svn服务器VisualSVN<br>客户端工具TortoiseSVN<br>idea svn插件</p>
-<h3 id="2-1-服务器端VisualSVN安装与配置"><a href="#2-1-服务器端VisualSVN安装与配置" class="headerlink" title="2.1 服务器端VisualSVN安装与配置"></a>2.1 服务器端VisualSVN安装与配置</h3><h4 id="2-1-1官网下载visualSVN"><a href="#2-1-1官网下载visualSVN" class="headerlink" title="2.1.1官网下载visualSVN"></a>2.1.1官网下载visualSVN</h4><p><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN01.png" alt></p>
-<h4 id="2-1-2安装visualSVN"><a href="#2-1-2安装visualSVN" class="headerlink" title="2.1.2安装visualSVN"></a>2.1.2安装visualSVN</h4><p><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN02.png" alt><br>location：安装位置<br>Repositories：仓库位置<br>存储方式使用FSFS<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN03.png" alt></p>
-<h4 id="2-1-3visualSVN使用"><a href="#2-1-3visualSVN使用" class="headerlink" title="2.1.3visualSVN使用"></a>2.1.3visualSVN使用</h4><p>创建组 创建用户<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN04.png" alt><br>分配权限 创建仓库 复制仓库的URL输入浏览器中成功访问<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN05.png" alt><br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN06.png" alt></p>
-<h3 id="2-2-客户端TortoiseSVN安装与配置"><a href="#2-2-客户端TortoiseSVN安装与配置" class="headerlink" title="2.2 客户端TortoiseSVN安装与配置"></a>2.2 客户端TortoiseSVN安装与配置</h3><p>TortoiseSVN是一个基于windows系统的svn客户端图形化界面</p>
-<h4 id="2-2-1-TortoiseSVN的下载与安装"><a href="#2-2-1-TortoiseSVN的下载与安装" class="headerlink" title="2.2.1 TortoiseSVN的下载与安装"></a>2.2.1 TortoiseSVN的下载与安装</h4><p><a href="https://tortoisesvn.net/downloads.html" target="_blank" rel="noopener">https://tortoisesvn.net/downloads.html</a> 官网下载<br>安装注意 选择第二个选项 要不然没有svn.exe文件<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN39.png" alt>    </p>
-<h4 id="2-2-2-TortoiseSVN的使用"><a href="#2-2-2-TortoiseSVN的使用" class="headerlink" title="2.2.2 TortoiseSVN的使用"></a>2.2.2 TortoiseSVN的使用</h4><p>新建文件夹 右键就会看到tortoiseSVN 点击Repo-browser浏览仓库<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN07.png" alt><br>输入认证信息赋予文件夹权限<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN08.png" alt><br>右键setting 清理认证信息<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN09.png" alt></p>
-<h4 id="2-2-3-TortoiseSVN的操作"><a href="#2-2-3-TortoiseSVN的操作" class="headerlink" title="2.2.3 TortoiseSVN的操作"></a>2.2.3 TortoiseSVN的操作</h4><p>通过checkout从仓库下载文件<br>新建文件 右键add 然后commit message内填写修改信息</p>
-<p><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN10.png" alt><br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN11.png" alt>       </p>
-<p><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN12.png" alt><br>update 更新服务器<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN13.png" alt><br>show log查看历史版本<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN14.png" alt></p>
-<h4 id="2-2-4-导入与导出"><a href="#2-2-4-导入与导出" class="headerlink" title="2.2.4 导入与导出"></a>2.2.4 导入与导出</h4><p>Import将本地资源导入到svn服务器<br>Export导出项目，和checkout的区别,它不存在.svn隐藏文件<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN16.png" alt></p>
-<h4 id="2-2-5-冲突问题"><a href="#2-2-5-冲突问题" class="headerlink" title="2.2.5 冲突问题"></a>2.2.5 冲突问题</h4><p>遇到冲突 Edit confilcts解决冲突<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN20.png" alt></p>
-<h2 id="3-IDEA中使用TortoiseSVN"><a href="#3-IDEA中使用TortoiseSVN" class="headerlink" title="3.IDEA中使用TortoiseSVN"></a>3.IDEA中使用TortoiseSVN</h2><h3 id="3-1-setting中配置svn"><a href="#3-1-setting中配置svn" class="headerlink" title="3.1 setting中配置svn"></a>3.1 setting中配置svn</h3><p><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN21.png" alt></p>
-<h3 id="3-2-svn在idea中的基本操作"><a href="#3-2-svn在idea中的基本操作" class="headerlink" title="3.2 svn在idea中的基本操作"></a>3.2 svn在idea中的基本操作</h3><h4 id="3-2-1-将项目checkout"><a href="#3-2-1-将项目checkout" class="headerlink" title="3.2.1 将项目checkout"></a>3.2.1 将项目checkout</h4><p><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN22.png" alt></p>
-<h4 id="3-2-2-按钮作用-update-commit-历史-返回版本"><a href="#3-2-2-按钮作用-update-commit-历史-返回版本" class="headerlink" title="3.2.2 按钮作用 update commit 历史 返回版本"></a>3.2.2 按钮作用 update commit 历史 返回版本</h4><p><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN23.png" alt>    </p>
-<h4 id="3-2-3-将项目提交到SVN"><a href="#3-2-3-将项目提交到SVN" class="headerlink" title="3.2.3 将项目提交到SVN"></a>3.2.3 将项目提交到SVN</h4><p><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN24.png" alt></p>
-<h4 id="3-2-4-忽略设置"><a href="#3-2-4-忽略设置" class="headerlink" title="3.2.4 忽略设置"></a>3.2.4 忽略设置</h4><p><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN30.png" alt>    </p>
-<h4 id="3-2-5-冲突解决"><a href="#3-2-5-冲突解决" class="headerlink" title="3.2.5 冲突解决"></a>3.2.5 冲突解决</h4><p><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN31.png" alt><br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN32.png" alt></p>
-<h3 id="3-3-项目模版"><a href="#3-3-项目模版" class="headerlink" title="3.3 项目模版"></a>3.3 项目模版</h3><h4 id="3-3-1-建立模版项目"><a href="#3-3-1-建立模版项目" class="headerlink" title="3.3.1 建立模版项目"></a>3.3.1 建立模版项目</h4><p>branches：分支项目<br>tags：分支版本（一般设为只读）<br>trunk：项目主干<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN34.png" alt>      </p>
-<h4 id="3-3-2-创建分支"><a href="#3-3-2-创建分支" class="headerlink" title="3.3.2 创建分支"></a>3.3.2 创建分支</h4><p><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN35.png" alt></p>
-<h4 id="3-3-3-主干分支合并"><a href="#3-3-3-主干分支合并" class="headerlink" title="3.3.3 主干分支合并"></a>3.3.3 主干分支合并</h4><p><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/SVN37.png" alt></p>
+                <h3 id="1-pv操作"><a href="#1-pv操作" class="headerlink" title="1.pv操作"></a>1.pv操作</h3><p>p：申请资源<br>v：释放资源</p>
+<h4 id="信号量机制"><a href="#信号量机制" class="headerlink" title="信号量机制"></a>信号量机制</h4><p>信号量是一个int型的变量<br>当信号量大于零时表示当前系统中某类资源的个数<br>当信号量小于零时表示当前系统中等待某类资源的个数    </p>
+<pre><code>假定一个阅览室最多可容纳100人，读者进入和离开阅览室时都必须在门口的一个登记表进行登记，
+而且每次只允许一个进行登记操作，请用P、V操作实现并发的读者进程间的同步问题。</code></pre><p>先找临界资源<br>临界资源：<br>1.座位：s=100<br>2.登记表：m=1<br>注意pv操作成对出现</p>
+<p>解：<br>s=100<br>m=1<br>void main{<br>&emsp;    cobegin<br>&emsp;&emsp;    readeri(i=1,2,3….n)<br>&emsp;coend<br>}</p>
+<p>readeri(){<br>&emsp;    p(s);<br>&emsp;&emsp;        p(m);<br>&emsp;&emsp;阅览室有空位置找登记表进行登记<br>&emsp;&emsp;        v(m);<br>&emsp;&emsp;放回登记表学习<br>&emsp;&emsp;        p(m);<br>&emsp;&emsp;找出登记项删除登记<br>&emsp;&emsp;        v(m);<br>&emsp;&emsp;走出阅览室<br>&emsp;    V(s);        </p>
+<p>}</p>
+<h3 id="2-作业调度、进程调度、内存分配和设备分配"><a href="#2-作业调度、进程调度、内存分配和设备分配" class="headerlink" title="2.作业调度、进程调度、内存分配和设备分配"></a>2.作业调度、进程调度、内存分配和设备分配</h3><p><a href="https://blog.csdn.net/HaoDaWang/article/details/78598178" target="_blank" rel="noopener">作业调度的五种算法</a><br>某系统采用不能移动已在主存中作业的可变分区方式管理主存，现在有供用户使用的主存空间100K，系统配有4台磁带机，现有一作业序列：<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/os01.png" alt><br>该系统采用多道程序设计技术，对磁带机采用静态分配，请分别写出采用先来先服务和短作业优先算法选中作业执行的次序和平均周转时间。    </p>
+<p>根据题意，我们需要先分析出各种算法的运行情况。<br>(1) 先来先服务算法的运行情况<br>先来先服务的运行情况            </p>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>提交时间</th>
+<th>进入主存时间</th>
+<th>开始计算时间</th>
+<th>结束计算时间</th>
+<th>周转时间</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>10:00</td>
+<td>10:00</td>
+<td>10:00</td>
+<td>10:25</td>
+<td>25</td>
+</tr>
+<tr>
+<td>2</td>
+<td>10:20</td>
+<td>10:20</td>
+<td>10:25</td>
+<td>10:55</td>
+<td>35</td>
+</tr>
+<tr>
+<td>3</td>
+<td>10:35</td>
+<td>10:35</td>
+<td>10:50</td>
+<td>11:15</td>
+<td>40</td>
+</tr>
+<tr>
+<td>4</td>
+<td>10:40</td>
+<td>10:55</td>
+<td>11:15</td>
+<td>11:30</td>
+<td>50</td>
+</tr>
+<tr>
+<td>5</td>
+<td>10:30</td>
+<td>11:30</td>
+<td>11:30</td>
+<td>11:40</td>
+<td>70</td>
+</tr>
+<tr>
+<td>所以，平均周转时间为：(25+35+40+50+70)/5=44min。</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>(2) 按计算时间最短者优先算法。<br>序号 | 提交时间 | 进入主存时间 | 开始计算时间 | 结束计算时间 | 周转时间<br>—|—|—|—|—|—<br>1 | 10:00 | 10:00 | 10:00 | 10:25 | 25<br>2 | 10:20 | 10:20 | 10:25 | 10:55 | 35<br>3 | 10:35 | 10:35 | 11:10 | 11:30 | 55<br>4 | 10:40 | 10:55 | 10:55 | 11:10 | 30<br>5 | 10:30 | 11:30 | 11:30 | 11:40 | 70<br>所以，平均周转时间为：(25+35+30+55+70)/5=43min。</p>
+<h3 id="3-银行家算法"><a href="#3-银行家算法" class="headerlink" title="3.银行家算法"></a>3.银行家算法</h3><p>假定系统中有五个进程{P0, P1, P2, P3, P4}和三类资源{A, B, C}，各种资源的数量分别为10、5、7，在T0时刻的资源分配情况如图所示。<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/os02.png" alt></p>
+<p>(1) T0时刻是否安全状态？若是，请给出安全序列。<br>(2)在T0时刻若进程P1请求资源（1，0，2），是否能实施资源分配？为什么？<br>(3)在（2）的基础上，若进程P4请求资源（3，3，0），是否能实施资源分配？为什么？<br>(4)在（3）的基础上，若进程P0请求资源 （0，2，0），是否能实施资源分配？为什么？           </p>
+<p>①安全序列为{P1, P3, P4, P2, P0}<br>②能实施资源分配Request1(1, 0, 2)≤Need1(1, 2, 2) &emsp; Request1(1, 0, 2)≤Available(3, 3, 2) &emsp;<br>&emsp;假定可为P1分配资源，利用安全性算法检查，存在安全序列为{P1, P3, P4, P0 P2}<br>③P4发出请求向量Request4(3，3，0)，系统按银行家算法进行检查：<br> Request4(3，3，0)≤Need4(4，3，1)；Request4(3，3，0)＞Available(2，3，0)，则不能实施资源分配，让P4等待。<br> ④P0发出请求向量Request0(0，2，0)，系统按银行家算法进行检查： Request0(0，2，0)≤Need0(7，4，3)；Request0(0，2，0)≤Available(2，3，0)； 先假定可为P0分配资源，利用安全性算法检查，不存在安全序列 ，</p>
+<h3 id="4-页面置换算法"><a href="#4-页面置换算法" class="headerlink" title="4.页面置换算法"></a>4.页面置换算法</h3><h4 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h4><p>在一个请求分页存储管理系统中，一个作业的页面走向为4、3、2、1、4、3、5、4、3、2、1、5，当分配给该作业的物理块数分别为3时，试计算采用下述页面淘汰算法时的缺页率（假设开始执行时主存中没有页面），并比较所得结果。          </p>
+<pre><code>最佳置换淘汰算法（OPT）。          
+先进先出淘汰算法（FIFO）。         
+最近最久未使用淘汰算法(LRU)。
+</code></pre><p><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/os03.png" alt><br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/os04.png" alt><br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/os05.png" alt></p>
+<h4 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h4><p>某页式虚存储系统的物理空间共3KB，页面大小为1KB。一进程按下列地址顺序引用内存单元：3635、3632、1140、3584、2892、3640、0040、2148、1700、2145、3209、0000、1102、1100。如果上述数字均为十进制数，而内存中尚未装入任何页。给出使用LRU算法是的缺页次数，并与FIFO是的情况进行比较。<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/os06.png" alt></p>
+<h4 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h4><p>某采用页式存储管理的系统中，接收了一个作业，作业执行时依次访问的页为：1，2，3，4，2，1，5，6，2，1，2，3，7。系统在主存中分配给该作业4个物理快，若开始四页已先装入主存（即作业执行前已将1、2、3、4页调入内存中，1页最先进入内存，4页最后装入内存）</p>
+<pre><code>试分别计算采用FIFO、LRU和OPT算法时，作业执行过程中会产生多少次缺页中断 
+、缺页率并写出依次产生缺页中断后应淘汰的页</code></pre><p>采用先进先出调度算法会产生6次缺页中断，依次淘汰的页是1、2、3、4、5、6.<br>采用最近最少用调度算法会产生4次缺页中断，依次淘汰的页是3、4、5、6.</p>
+<h4 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h4><p>设某分页系统中，页面大小为100字节，一个程序大小为1200字节，逻辑地址访问序列如下：10，205，110，735，603，50，815，314，432，320，225，80，130，270。系统为其分配4个主存块。</p>
+<pre><code>试用LRU、OPT和FIFO算法算出各个页面置换算法的命中率</code></pre><p><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/os07.png" alt><br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/os08.png" alt></p>
+<h3 id="5-地址转换"><a href="#5-地址转换" class="headerlink" title="5.地址转换"></a>5.地址转换</h3><h4 id="1-1"><a href="#1-1" class="headerlink" title="1."></a>1.</h4><p>在一分页存储管理系统中，逻辑地址长度为16位，页面大小为4096B，现有一逻辑地址为2F6AH，且第0、1、2页依次存放在物理块5、10、11中，问相应的物理地址为多少？       </p>
+<p> 答：页号：4位 ，页内偏移地址：12位<br>        2F6AH=（0010   111101101010）<br>      页号2 存在第11块中（1011   111101101010）<br>   物理地址：BF6AH</p>
+<h4 id="2-1"><a href="#2-1" class="headerlink" title="2."></a>2.</h4><p>设有一页式存储管理系统，向用户提供的逻辑地址空间最大为16页，每页2048B，内存总共有8个存储块，试问逻辑地址至少应为多少位？内存空间有多大？</p>
+<p>  答：211=2048    24=16 ，所以逻辑地址至少15位。<br>内存空间：8*2048=16K    </p>
+<h3 id="6-磁盘调度算法"><a href="#6-磁盘调度算法" class="headerlink" title="6.磁盘调度算法"></a>6.磁盘调度算法</h3><p>若磁头的当前位置为100磁道，磁头正向磁道增加方向移动。现有一磁盘读写请求队列：23，376，205，132，19，61，190，398，29，4，18，40。若采用先来先服务、最短寻道时间优先和扫描算法：<br>试计算出平均寻道长度各为多少？<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/os09.png" alt></p>
+<h3 id="7-物理块优化"><a href="#7-物理块优化" class="headerlink" title="7.物理块优化"></a>7.物理块优化</h3><h4 id="1-2"><a href="#1-2" class="headerlink" title="1."></a>1.</h4><p>假定磁盘转速为20ms/r，磁盘格式化时每个磁道被划分为10个扇区，今有10个逻辑记录（每个记录的大型刚好与扇区大小相等）存放在同一磁道上，处理程序每次从磁盘读出一个记录后要花4ms进行处理，现要求顺序处理这10个记录，若磁头现在正处于首个逻辑记录的始点位置。<br>请问：<br>按逆时针方向安排10个逻辑记录（磁盘顺时针方向转），处理程序处理完这10个记录所需要的时间是多少<br>按最优化分布重新安排这10个逻辑记录，写出记录的安排，并计算出所需要处理的时间     </p>
+<p><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/os10.png" alt></p>
+<h4 id="2-2"><a href="#2-2" class="headerlink" title="2."></a>2.</h4><p>如果磁盘的每个磁道分成9个块，现有一个文件共有  A，B，…，I         9个记录，每个记录的大小与块的大小相等，设磁盘转速为27ms/r，每读出一块后需要2ms的处理时间。若忽略其他辅助时间，试问<br>如果顺序存放这些记录并顺序读取，处理该文件要多少时间？<br>如果要顺序读取该文件，记录如何存放处理时间最短？<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/os11.png" alt></p>
 
             </div>
             <hr>
@@ -597,9 +653,9 @@
             </div>
             <br>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">
-                    《SVN入门》
+                    《操作系统复习题（大题）》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/06/09/svn-ru-men/" property="cc:attributionName" rel="cc:attributionURL">
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/06/27/cao-zuo-xi-tong-fu-xi-ti/" property="cc:attributionName" rel="cc:attributionURL">
                 edder
             </a> 采用
             <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
@@ -640,57 +696,56 @@
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/06/10/adminlte-de-ji-ben-shi-yong/">
+                <a href="/2019/06/27/cao-zuo-xi-tong-fu-xi-ti/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="AdminLTE的基本使用">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="操作系统复习题（大题）">
                         
-                        <span class="card-title">AdminLTE的基本使用</span>
+                        <span class="card-title">操作系统复习题（大题）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            AdminLTE 基本使用1.AdminLTE简介AdminLTE是一款建立在bootstrap和jquery之上的开源的模板主题工具。
-2.AdminLTE下载英文版下载地址：https://github.com/almasaeed201
+                            1.pv操作p：申请资源v：释放资源
+信号量机制信号量是一个int型的变量当信号量大于零时表示当前系统中某类资源的个数当信号量小于零时表示当前系统中等待某类资源的个数    
+假定一个阅览室最多可容纳100人，读者进入和离开阅览室时都必须在
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-10
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-27
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/主题模版/" class="post-category" target="_blank">
-                                    主题模版
+                            <a href="/categories/操作系统/" class="post-category" target="_blank">
+                                    操作系统
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/AdminLTE/" target="_blank">
-                        <span class="chip bg-color">AdminLTE</span>
+                    <a href="/tags/银行家算法/" target="_blank">
+                        <span class="chip bg-color">银行家算法</span>
                     </a>
                     
-                    <a href="/tags/bootstrap/" target="_blank">
-                        <span class="chip bg-color">bootstrap</span>
+                    <a href="/tags/PV操作/" target="_blank">
+                        <span class="chip bg-color">PV操作</span>
                     </a>
                     
-                    <a href="/tags/主题模版/" target="_blank">
-                        <span class="chip bg-color">主题模版</span>
-                    </a>
-                    
-                    <a href="/tags/后台模版/" target="_blank">
-                        <span class="chip bg-color">后台模版</span>
+                    <a href="/tags/调度算法/" target="_blank">
+                        <span class="chip bg-color">调度算法</span>
                     </a>
                     
                 </div>
@@ -704,35 +759,32 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/06/07/git-da-jian-yu-ji-ben-cao-zuo/">
+                <a href="/2019/06/26/java-ji-chu-yu-fa-yi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="git搭建与基本操作">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Java基础语法（一）">
                         
-                        <span class="card-title">git搭建与基本操作</span>
+                        <span class="card-title">Java基础语法（一）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Git理论1,1git的概述git是一个开源的分布式版本控制系统，可以借助github托管项目代码，进行团队开发。
-1.2git网址国内码云国外github
-1.3 Git原理图
-Git实战使用前要安装git，并配置环境变量。
-2.1工作时
+                            1.方法重载（ overlord ）1.1为什么使用方法重载对于功能类似的方法来说，因为参数列表不一样，却需要记住那么多不同的方法名称过于麻烦。
+1.2方法重载概念方法重载是指多个方法名称一样但参数列表不一样。只要记住一个方法名称，就能实现
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-07
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-26
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/版本控制系统/" class="post-category" target="_blank">
-                                    版本控制系统
+                            <a href="/categories/java基础/" class="post-category" target="_blank">
+                                    java基础
                                 </a>
                             
                             
@@ -742,20 +794,24 @@ Git实战使用前要安装git，并配置环境变量。
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/项目管理/" target="_blank">
-                        <span class="chip bg-color">项目管理</span>
+                    <a href="/tags/方法重载/" target="_blank">
+                        <span class="chip bg-color">方法重载</span>
                     </a>
                     
-                    <a href="/tags/多人开发/" target="_blank">
-                        <span class="chip bg-color">多人开发</span>
+                    <a href="/tags/数组/" target="_blank">
+                        <span class="chip bg-color">数组</span>
                     </a>
                     
-                    <a href="/tags/git/" target="_blank">
-                        <span class="chip bg-color">git</span>
+                    <a href="/tags/java内存/" target="_blank">
+                        <span class="chip bg-color">java内存</span>
                     </a>
                     
-                    <a href="/tags/分布式版本控制系统/" target="_blank">
-                        <span class="chip bg-color">分布式版本控制系统</span>
+                    <a href="/tags/JVM-JRE-JDK/" target="_blank">
+                        <span class="chip bg-color">JVM JRE JDK</span>
+                    </a>
+                    
+                    <a href="/tags/面向对象/" target="_blank">
+                        <span class="chip bg-color">面向对象</span>
                     </a>
                     
                 </div>
