@@ -1,0 +1,1145 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Java常用API, edder Blog">
+    <meta name="description" content="API概念application programming interface                                 应用程序编程接口。是JDK中提供给我们现成的类可以直接拿来使用。    
+一个标准的类通常要满足四">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Java常用API | edder Blog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+</head>
+
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">edder Blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">edder Blog</div>
+        <div class="logo-desc">
+            
+            乾坤未定，你我皆黑马。
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank" data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewbox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        Java常用API
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/API/" target="_blank">
+                                <span class="chip bg-color">API</span>
+                            </a>
+                        
+                            <a href="/tags/匿名对象/" target="_blank">
+                                <span class="chip bg-color">匿名对象</span>
+                            </a>
+                        
+                            <a href="/tags/Date类/" target="_blank">
+                                <span class="chip bg-color">Date类</span>
+                            </a>
+                        
+                            <a href="/tags/拆箱装箱/" target="_blank">
+                                <span class="chip bg-color">拆箱装箱</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/JAVA基础/" class="post-category" target="_blank">
+                                JAVA基础
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-07-06
+                </div>
+
+                
+				
+				
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h3 id="API概念"><a href="#API概念" class="headerlink" title="API概念"></a>API概念</h3><p>application programming interface                                 应用程序编程接口。<br>是JDK中提供给我们现成的类可以直接拿来使用。    </p>
+<h3 id="一个标准的类"><a href="#一个标准的类" class="headerlink" title="一个标准的类"></a>一个标准的类</h3><p>通常要满足四个组成部分<br>1.所有的成员变量都要用private<br>2.为每一个成员变量都编写Getter/Setter方法<br>3.编写一个无参构造方法<br>4.编写一个全参构造方法                    </p>
+<h3 id="引用类型的一般使用步骤"><a href="#引用类型的一般使用步骤" class="headerlink" title="引用类型的一般使用步骤"></a>引用类型的一般使用步骤</h3><ol>
+<li>导包 import 包路径，类名称；<br>如果需要使用的目标类，和当前类位于同一个包下，则可以省略不写<br>只有java.lang包下的内容不需要导包，其他的包都需要 import导包                          </li>
+<li>创建<br>类名称 对象名= new 类名称();           </li>
+<li>使用<br>对象名.成员方法名()                    </li>
+</ol>
+<h3 id="匿名对象（anoymous）"><a href="#匿名对象（anoymous）" class="headerlink" title="匿名对象（anoymous）"></a>匿名对象（anoymous）</h3><p>创建对象的标准格式：<br>类名称 对象名 = new 类名称（）<br>匿名对象就是只有右边的对象，没有左边的名字和复制运算符<br>new 类名称();<br>注意事项：匿名对象只能使用一次，下一次使用不得不创建一个新的对象。<br>匿名对象也可以作为方法的参数和返回值<br>使用建议：如果一个对象只需要使用唯一的一次，就可以使用匿名对象。                   </p>
+<h3 id="Scanner类"><a href="#Scanner类" class="headerlink" title="Scanner类"></a>Scanner类</h3><p>Scanner的功能<br>可以实现键盘输入数据到程序中                        </p>
+<h3 id="Random类"><a href="#Random类" class="headerlink" title="Random类"></a>Random类</h3><p>用来生成随机数字。        </p>
+<h3 id="String类"><a href="#String类" class="headerlink" title="String类"></a>String类</h3><p>String类代表字符串。<br>程序当中所有双引号的字符串都是String类的对象。<br>特点：<br>1.字符串的内容永不可变。<br>2.正是因为字符串不可改变，所以字符串是可以共享使用的。<br>3.字符串效果上相当于char[]字符数组，但底层原理是byte[]字节数组。             </p>
+<p>字符串常量池：只有程序当中写上双引号字符串，才在字符串常量池中。  </p>
+<p>==是对象的地址值比较，如果确实需要字符串的内容比较扩使用两个方法<br>public boolean equqls(Object obj) 只有参数是一个字符串并且参数内容相同才会返回true<br>public boolean equalsIgnoreCase(String string) 不区分大小写参数内容相同返回true                </p>
+<p>String当中与获取相关常用方法有<br>public int length(); 获取字符串当中含有字符个数，拿到字符串长度。<br>public String concat(String str); 将当前字符串和参数字符串拼接成返回值新的字符串<br>public char charAt(int index); 获取指定索引位置的单个字符。(索引从0开始)<br>public int indexOf(String str);                    查找参数字符串在本字符串当中首次出现索引位置，如果没有返回-1值。                 </p>
+<p>字符串的截取方法<br>public String substring(int index); 截取从参数位置一直到字符串末尾，返回新字符串<br>public String substring(int begin,int              end)就是从begin开始，一直到end结束，中间的字符串。<br>左闭右开区间             </p>
+<p>对于基本类型来说 ==是进行数值的比较<br>对于引用类型来说 ==是进行【地址值】的比较                         </p>
+<p>string当中与转换相关的常用方法            </p>
+<p>public char[] tochararry（）将当前字符串拆分为字符数组作为返回值<br>public byte[] getbytes（）获得当前字符串的底层字节数组<br>public string replace（旧的，新的）将所有旧的字符串换成新的字符串 返回替换后的字符串             </p>
+<h4 id="字符串的分割方法"><a href="#字符串的分割方法" class="headerlink" title="字符串的分割方法"></a>字符串的分割方法</h4><p>public string[] split（string regex） 按照参数的规则，将字符串分成若干部分<br>注意事项：<br>split方法的参数其实是一个正则表达式，如果要按照英文句点来切分要写成”//.”         </p>
+<h3 id="static类"><a href="#static类" class="headerlink" title="static类"></a>static类</h3><p>一旦用了static关键字<br>那么这样的内容不再属于自己而是属于类的 所以凡是本类的对象都共享同一份。<br>使用static修饰成员方法 不需要创建对象，直接通过类名称直接调用<br>无论是成员变量还是成员方法有了static都推荐使用类名称直接调用<br>对于本类当中的静态方法可以省略类名称              </p>
+<p>注意事项<br>1.静态不能直接访问非静态<br>原因：在内存当中是先有的静态 后有的非静态<br>2.静态方法不能用this<br>this表示的是当前对象            </p>
+<p>根据类名称访问静态成员变量的时候全程和对象没关系，只和类有关系。<br>静态代码块<br>当第一次使用本类时，静态代码执行唯一一次                   。<br>静态内容总是优先于非静态静态代码块比构造方法先执行<br>用来一次性的对静态成员变量进行赋值         </p>
+<h3 id="arrys工具类"><a href="#arrys工具类" class="headerlink" title="arrys工具类"></a>arrys工具类</h3><p>是一个与数组相关的工具类，里面提供了大量的静态方法用来实现数组常见的操作<br>public static string tostring 将参数数组转换成字符串<br>public void sort 按照默认升序将数组排序<br>如果是自定义类型需要有comparator接口的支持           </p>
+<h3 id="MATH类"><a href="#MATH类" class="headerlink" title="MATH类"></a>MATH类</h3><p>数学相关的工具类 里面提供了大量的静态方法 完成与数学相关的操作<br>public static double obs（double num）获取绝对值<br>public static double ceil （double num） 向上取整<br>public static floor（double num）向下取整<br>public static long round（double num）四舍五入         </p>
+<h3 id="Object类"><a href="#Object类" class="headerlink" title="Object类"></a>Object类</h3><h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><p>java.long.object类是java语言中的根类，即所有类的父类。</p>
+<h4 id="tostring方法"><a href="#tostring方法" class="headerlink" title="tostring方法"></a>tostring方法</h4><p> String toString()       返回该对象的字符串表示；<br> 直接打印名字，其实就是调用对象的tostring<br> 如果没有重写toString方法那么打印的是对象的地址值          </p>
+<h4 id="equals"><a href="#equals" class="headerlink" title="equals"></a>equals</h4><p>源码</p>
+<pre><code>public boolean equals(Object obj) {
+        return (this == obj);
+    }</code></pre><p>参数：Object obj;可以传递任意对象<br>    ==比较运算符，返回的是一个布尔值 true false<br>    基本数据类型：比较的是值<br>    引用数据类型：比较的是两个对象的地址值         </p>
+<pre><code>public boolean equals(Object o) {
+
+        //传递的参数obj如果是this本身直接返回true
+        if (o==this){
+            return true;
+        }
+        //如果为空直接返回false
+        if (o==null) {
+            return false;
+        }
+        //增加判断,防止类型转换异常ClassCastException
+        if (o instanceof Person){
+            //使用向下转型，把obj转换为Person类型
+            Person p = (Person) o;
+            //比较两个
+            if(this.name.equals(p.name) &amp;&amp; this.age==p.age){
+                return true;
+            }else {
+                return false;
+            }
+        }else {
+            return false;
+        }
+
+    }</code></pre><h3 id="Date类"><a href="#Date类" class="headerlink" title="Date类"></a>Date类</h3><p>表示日期和时间的类<br>date表示特定的瞬间，精确到毫秒；<br>毫秒值的作用，可以对时间和日期进行计算<br>把日期转换成毫秒进行计算，计算完毕，再把毫秒转换为日期         </p>
+<p>把日期转换为毫秒<br>    当前的日期<br>    时间原点(0毫秒) 1970年1月1日         00:00:00（英国格林威治）<br>    就是计算当前日期原点之间一共经历了多少毫秒<br>把毫秒转换为日期<br><strong>注意</strong>：           
+    中国属于东八区，会把时间增加8个小时         </p>
+<p>构造方法</p>
+<ul>
+<li>public Date():默认为当前系统时间。</li>
+<li>public Date(long date)：参数为1970年1月1日00:00:00 GMT）以来的指定毫秒数。</li>
+</ul>
+<p>成员方法</p>
+<pre><code>public long getTime() 把日期对象转换成对应的时间毫秒值。</code></pre><h3 id="DateFormat类"><a href="#DateFormat类" class="headerlink" title="DateFormat类"></a>DateFormat类</h3><h4 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h4><p>java.text.DateFormat 是日期/时间格式化子类的抽象类，我们通过这个类可以帮我们完成日期和文本之间的转换,也就是可以在Date对象与String对象之间进行来回转换。</p>
+<ul>
+<li><strong>格式化</strong>：按照指定的格式，从Date对象转换为String对象。</li>
+<li><strong>解析</strong>：按照指定的格式，从String对象转换为Date对象。</li>
+</ul>
+<h4 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h4><p>DateFormat类是抽象类，不能直接使用，需要使用它的子类SimpleDateFormat</p>
+<pre><code>DateFormat format = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);</code></pre><h4 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h4><pre><code>DateFormat类的常用方法有：
+
+- public String format(Date date)：将Date对象格式化为字符串。
+- public Date parse(String source)：将字符串解析为Date对象。</code></pre><h3 id="Calendar类"><a href="#Calendar类" class="headerlink" title="Calendar类"></a>Calendar类</h3><h4 id="概念-2"><a href="#概念-2" class="headerlink" title="概念"></a>概念</h4><p><code>java.util.Calendar</code>是日历类，在Date后出现，替换掉了许多Date的方法。该类将所有可能用到的时间信息封装为静态成员变量，方便获取。日历类就是方便获取各个时间属性的。</p>
+<h4 id="获取方式"><a href="#获取方式" class="headerlink" title="获取方式"></a>获取方式</h4><p>Calendar为抽象类，由于语言敏感性，Calendar类在创建对象时并非直接创建，而是通过静态方法创建，返回子类对象，如下：</p>
+<p>Calendar静态方法</p>
+<ul>
+<li><code>public static Calendar getInstance()</code>：使用默认时区和语言环境获得一个日历</li>
+</ul>
+<pre><code>        Calendar cal = Calendar.getInstance();
+</code></pre><h4 id="常用方法-1"><a href="#常用方法-1" class="headerlink" title="常用方法"></a>常用方法</h4><p>根据Calendar类的API文档，常用方法有：</p>
+<ul>
+<li><code>public int get(int field)</code>：返回给定日历字段的值。</li>
+<li><code>public void set(int field, int value)</code>：将给定的日历字段设置为给定值。</li>
+<li><code>public abstract void add(int field, int amount)</code>：根据日历的规则，为给定的日历字段添加或减去指定的时间量。</li>
+<li><code>public Date getTime()</code>：返回一个表示此Calendar时间值（从历元到现在的毫秒偏移量）的Date对象。</li>
+</ul>
+<p>Calendar类中提供很多成员常量，代表给定的日历字段：</p>
+<table>
+<thead>
+<tr>
+<th>字段值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>YEAR</td>
+<td>年</td>
+</tr>
+<tr>
+<td>MONTH</td>
+<td>月（从0开始，可以+1使用）</td>
+</tr>
+<tr>
+<td>DAY_OF_MONTH</td>
+<td>月中的天（几号）</td>
+</tr>
+<tr>
+<td>HOUR</td>
+<td>时（12小时制）</td>
+</tr>
+<tr>
+<td>HOUR_OF_DAY</td>
+<td>时（24小时制）</td>
+</tr>
+<tr>
+<td>MINUTE</td>
+<td>分</td>
+</tr>
+<tr>
+<td>SECOND</td>
+<td>秒</td>
+</tr>
+<tr>
+<td>DAY_OF_WEEK</td>
+<td>周中的天（周几，周日为1，可以-1使用）</td>
+</tr>
+</tbody></table>
+<h5 id="get-set方法"><a href="#get-set方法" class="headerlink" title="get/set方法"></a>get/set方法</h5><p>get方法用来获取指定字段的值，set方法用来设置指定字段的值</p>
+<pre><code>    public static void main(String[] args) {
+        Calendar cal = Calendar.getInstance();
+        cal.set(Calendar.YEAR, 2020);
+        cal.get(Calendar.MINUTE);
+        System.out.print(year + &quot;年&quot; + month + &quot;月&quot; + dayOfMonth + &quot;日&quot;); // 2020年1月17日
+    }</code></pre><h5 id="add方法"><a href="#add方法" class="headerlink" title="add方法"></a>add方法</h5><p>add方法可以对指定日历字段的值进行加减操作，如果第二个参数为正数则加上偏移量，如果为负数则减去偏移量。代码如：</p>
+<pre><code>
+        cal.add(Calendar.DAY_OF_MONTH, 2); // 加2天
+        cal.add(Calendar.YEAR, -3); // 减3年
+</code></pre><h5 id="getTime-setTime方法"><a href="#getTime-setTime方法" class="headerlink" title="getTime/setTime方法"></a>getTime/setTime方法</h5><p>Calendar中的getTime方法并不是获取毫秒时刻，而是拿到对应的Date对象。</p>
+<pre><code>public class Demo09CalendarMethod {
+    public static void main(String[] args) {
+        Calendar cal = Calendar.getInstance();
+        Date date = cal.getTime();
+        System.out.println(date); // Tue Jan 16 16:03:09 CST 2018
+    }
+}</code></pre><blockquote>
+<p>小贴士：</p>
+<p>​     西方星期的开始为周日，中国为周一。</p>
+<p>​     在Calendar类中，月份的表示是以0-11代表1-12月。</p>
+<p>​     日期是有大小关系的，时间靠后，时间越大。</p>
+</blockquote>
+<h3 id="System类"><a href="#System类" class="headerlink" title="System类"></a>System类</h3><p>java.lang.System<br>提供了大量静态方法可以获取与系统相关的信息或系统操作,在System类的API文档中</p>
+<h4 id="常用的方法"><a href="#常用的方法" class="headerlink" title="常用的方法"></a>常用的方法</h4><p><code>public static Long currentTimeMillis()</code>返回当前时间</p>
+<p><code>public static arraycopy(Object src, int srcPos, Object dest, int destPos, int length)</code><br>将指定源数组中的数组从指定位置复制到目标数组的指定位置。 </p>
+<pre><code>src - 源数组。 
+srcPos - 源数组中的起始位置。 
+dest - 目标数组。 
+destPos - 目的地数据中的起始位置。 
+length - 要复制的数组元素的数量。 </code></pre><h3 id="StringBuilder类"><a href="#StringBuilder类" class="headerlink" title="StringBuilder类"></a>StringBuilder类</h3><h4 id="原理-与String区别"><a href="#原理-与String区别" class="headerlink" title="原理 与String区别"></a>原理 与String区别</h4><h5 id="Sting类"><a href="#Sting类" class="headerlink" title="Sting类"></a>Sting类</h5><p>字符串是常量:他们的值在创建之后不能更改<br>字符串的底层是被final修饰的数组,不能改变,是一个常量.<br>进行字符串的相加,内存中就会有多个字符串,占用空间多,效率低下                </p>
+<h5 id="StringBuilder类-1"><a href="#StringBuilder类-1" class="headerlink" title="StringBuilder类"></a>StringBuilder类</h5><p>字符串缓冲区,可以提高字符串的操作效率(看成一个长度可以变化的字符串)<br>底层也是一个数组,但是没有被final修饰,可以改变长度<br>StringBuilder在内存总始终是一个数组,占用空间少,效率高,如果超出容量会自动扩容              </p>
+<h4 id="StringBuilder构造方法"><a href="#StringBuilder构造方法" class="headerlink" title="StringBuilder构造方法"></a>StringBuilder构造方法</h4><p><code>public StringBuilder()</code>构造一个空的StringBuilder<br><code>public StringBuilder(String str)</code>构造一个StringBuilder容器,并将字符串添加进去</p>
+<h4 id="StringBuilder成员方法"><a href="#StringBuilder成员方法" class="headerlink" title="StringBuilder成员方法"></a>StringBuilder成员方法</h4><ul>
+<li><code>public StringBuilder append(...)</code>：添加任意类型数据的字符串形式，并返回当前对象自身。</li>
+<li><code>public String   toString()</code>：将当前StringBuilder对象转换为String对象。    </li>
+</ul>
+<p><strong>链式编程</strong><br>方法返回值是该对象可以一直调用方法 </p>
+<h3 id="包装类"><a href="#包装类" class="headerlink" title="包装类"></a>包装类</h3><h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h4><p>Java提供了两个类型系统，基本类型与引用类型，使用基本类型在于效率，然而很多情况，会创建对象使用，因为对象可以做更多的功能，如果想要我们的基本类型像对象一样操作，就可以使用基本类型对应的包装类，如下：</p>
+<table>
+<thead>
+<tr>
+<th>基本类型</th>
+<th>对应的包装类（位于java.lang包中）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>byte</td>
+<td>Byte</td>
+</tr>
+<tr>
+<td>short</td>
+<td>Short</td>
+</tr>
+<tr>
+<td>int</td>
+<td><strong>Integer</strong></td>
+</tr>
+<tr>
+<td>long</td>
+<td>Long</td>
+</tr>
+<tr>
+<td>float</td>
+<td>Float</td>
+</tr>
+<tr>
+<td>double</td>
+<td>Double</td>
+</tr>
+<tr>
+<td>char</td>
+<td><strong>Character</strong></td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>Boolean</td>
+</tr>
+</tbody></table>
+<h4 id="装箱与拆箱"><a href="#装箱与拆箱" class="headerlink" title="装箱与拆箱"></a>装箱与拆箱</h4><p>基本类型与对应的包装类对象之间，来回转换的过程称为”装箱“与”拆箱“：</p>
+<ul>
+<li><strong>装箱</strong>：从基本类型转换为对应的包装类对象。</li>
+<li><strong>拆箱</strong>：从包装类对象转换为对应的基本类型。</li>
+</ul>
+<p>由于我们经常要做基本类型与包装类之间的转换，从Java 5（JDK 1.5）开始，基本类型与包装类的装箱、拆箱动作可以自动完成。</p>
+<h4 id="基本类型与字符串之间的转换"><a href="#基本类型与字符串之间的转换" class="headerlink" title="基本类型与字符串之间的转换"></a>基本类型与字符串之间的转换</h4><h5 id="基本类型转换为String"><a href="#基本类型转换为String" class="headerlink" title="基本类型转换为String"></a>基本类型转换为String</h5><p>   基本类型转换String总共有三种方式，查看课后资料可以得知，这里只讲最简单的一种方式： </p>
+<pre><code>基本类型直接与””相连接即可；如：34+&quot;&quot;</code></pre><h5 id="String转换成对应的基本类型"><a href="#String转换成对应的基本类型" class="headerlink" title="String转换成对应的基本类型"></a>String转换成对应的基本类型</h5><p>除了Character类之外，其他所有包装类都具有parseXxx静态方法可以将字符串参数转换为对应的基本类型：</p>
+<ul>
+<li><code>public static byte parseByte(String s)</code>：将字符串参数转换为对应的byte基本类型。</li>
+<li><code>public static short parseShort(String s)</code>：将字符串参数转换为对应的short基本类型。</li>
+<li><code>public static int parseInt(String s)</code>：将字符串参数转换为对应的int基本类型。</li>
+</ul>
+<blockquote>
+<p>如果字符串参数的内容无法正确转换为对应的基本类型，则会抛出<code>java.lang.NumberFormatException</code>异常。</p>
+</blockquote>
+
+            </div>
+            <hr>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        <p class="reprint-tip">
+            <i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;
+            <span>转载规则</span>
+        </p>
+        
+            <div class="center-align">
+                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                    <img alt style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png">
+                </a>
+            </div>
+            <br>
+            <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">
+                    《Java常用API》
+                </span> 由
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/07/06/chang-yong-api/" property="cc:attributionName" rel="cc:attributionURL">
+                edder
+            </a> 采用
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                知识共享署名 4.0 国际许可协议
+            </a>进行许可。
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2019/07/06/chang-yong-api/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Java常用API">
+                        
+                        <span class="card-title">Java常用API</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            API概念application programming interface                                 应用程序编程接口。是JDK中提供给我们现成的类可以直接拿来使用。    
+一个标准的类通常要满足四
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-06
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/JAVA基础/" class="post-category" target="_blank">
+                                    JAVA基础
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/API/" target="_blank">
+                        <span class="chip bg-color">API</span>
+                    </a>
+                    
+                    <a href="/tags/匿名对象/" target="_blank">
+                        <span class="chip bg-color">匿名对象</span>
+                    </a>
+                    
+                    <a href="/tags/Date类/" target="_blank">
+                        <span class="chip bg-color">Date类</span>
+                    </a>
+                    
+                    <a href="/tags/拆箱装箱/" target="_blank">
+                        <span class="chip bg-color">拆箱装箱</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/06/27/cao-zuo-xi-tong-fu-xi-ti/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="操作系统复习题（大题）">
+                        
+                        <span class="card-title">操作系统复习题（大题）</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            1.pv操作p：申请资源v：释放资源
+信号量机制信号量是一个int型的变量当信号量大于零时表示当前系统中某类资源的个数当信号量小于零时表示当前系统中等待某类资源的个数    
+假定一个阅览室最多可容纳100人，读者进入和离开阅览室时都必须在
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-27
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/操作系统/" class="post-category" target="_blank">
+                                    操作系统
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/银行家算法/" target="_blank">
+                        <span class="chip bg-color">银行家算法</span>
+                    </a>
+                    
+                    <a href="/tags/PV操作/" target="_blank">
+                        <span class="chip bg-color">PV操作</span>
+                    </a>
+                    
+                    <a href="/tags/调度算法/" target="_blank">
+                        <span class="chip bg-color">调度算法</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由&copy;<a href="https://edderqin.github.io/" target="_blank">Blinkfox</a>基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 的
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>主题搭建.
+
+            
+
+            
+			
+                <br>
+                
+                <span id="busuanzi_container_site_pv">
+                    <i class="fa fa-heart-o"></i>
+                    本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+                </span>
+                
+                
+                <span id="busuanzi_container_site_uv">
+                    <i class="fa fa-users"></i>
+                    次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+                </span>
+                
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+    <a href="mailto:644931786@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=644931786" class="tooltipped" data-tooltip="QQ联系我: 644931786" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    <script src="/libs/others/clicklove.js"></script>
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
