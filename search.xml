@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>List集合,Set集合,Collections工具类</title>
+      <link href="/2019/09/16/list-ji-he-set-ji-he-collections-gong-ju-lei/"/>
+      <url>/2019/09/16/list-ji-he-set-ji-he-collections-gong-ju-lei/</url>
+      
+        <content type="html"><![CDATA[<h3 id="1-List接口"><a href="#1-List接口" class="headerlink" title="1 List接口"></a>1 List接口</h3><h4 id="1-1-List介绍"><a href="#1-1-List介绍" class="headerlink" title="1.1 List介绍"></a>1.1 List介绍</h4><p>特点:            </p><ol><li>List元素有序</li><li>List带索引</li><li>集合中可以有重复元素,通过元素的equals方法来比较是否为重复元素</li></ol><h4 id="1-2-List常用方法"><a href="#1-2-List常用方法" class="headerlink" title="1.2 List常用方法"></a>1.2 List常用方法</h4><ul><li><code>public void add(int index, E element)</code>: 将指定的元素，添加到该集合中的指定位置上。</li><li><code>public E get(int index)</code>:返回集合中指定位置的元素。</li><li><code>public E remove(int index)</code>: 移除列表中指定位置的元素, 返回的是被移除的元素。</li><li><code>public E set(int index, E element)</code>:用指定元素替换集合中指定位置的元素,返回值的更新前的元素。</li></ul><h4 id="1-3-ArrayList集合"><a href="#1-3-ArrayList集合" class="headerlink" title="1.3 ArrayList集合"></a>1.3 ArrayList集合</h4><p><code>java.util.ArrayList</code><br>特点:<br>增删慢,查询快,存储结构为数组结构</p><h4 id="1-4-LinkedList集合"><a href="#1-4-LinkedList集合" class="headerlink" title="1.4 LinkedList集合"></a>1.4 LinkedList集合</h4><p><code>java.util.LinkedList</code><br>特点:<br>增删快,存储结构为双向链表<br><img src="https://ws1.sinaimg.cn/mw690/006lnyTwly1g71mjv6uafj30jo08rt8r.jpg" alt></p><h5 id="1-4-1-常用方法"><a href="#1-4-1-常用方法" class="headerlink" title="1.4.1 常用方法"></a>1.4.1 常用方法</h5><ul><li><code>public void addFirst(E e)</code>:将指定元素插入此列表的开头。</li><li><code>public void addLast(E e)</code>:将指定元素添加到此列表的结尾。</li><li><code>public E getFirst()</code>:返回此列表的第一个元素。</li><li><code>public E getLast()</code>:返回此列表的最后一个元素。</li><li><code>public E removeFirst()</code>:移除并返回此列表的第一个元素。</li><li><code>public E removeLast()</code>:移除并返回此列表的最后一个元素。</li><li><code>public E pop()</code>:从此列表所表示的堆栈处弹出一个元素。</li><li><code>public void push(E e)</code>:将元素推入此列表所表示的堆栈。</li><li><code>public boolean isEmpty()</code>：如果列表不包含元素，则返回true。</li></ul><h3 id="2-Set接口"><a href="#2-Set接口" class="headerlink" title="2 Set接口"></a>2 Set接口</h3><p>特点: </p><ol><li>元素不重复</li><li>没有索引也不能用for循环遍历,与Collection类似.</li></ol><h4 id="2-1-HashSet集合介绍"><a href="#2-1-HashSet集合介绍" class="headerlink" title="2.1 HashSet集合介绍"></a>2.1 HashSet集合介绍</h4><p><code>java.util.HashSet</code><br>特点:  </p><ol><li>哈希表结构速度快</li><li>是一个无序集合,存储元素和取出元素的顺序可能不一样.</li></ol><p>哈希值:  是一个十进制的整数,由系统随机给出(就是对象的地址值,是一个逻辑地址,是模拟出来得到地址,不是数据实际存储的物理地址)<br>在Object类有一个方法,可以获取对象的哈希吗值</p><pre><code>public native  int hashCode()//native代表该方法调用的是本地操作系统的方法</code></pre><p><img src="https://ws1.sinaimg.cn/mw690/006lnyTwly1g71ng9r5bqj30wf0famyf.jpg" alt></p><h4 id="2-2-HashSet集合存储数据的结构"><a href="#2-2-HashSet集合存储数据的结构" class="headerlink" title="2.2 HashSet集合存储数据的结构"></a>2.2 HashSet集合存储数据的结构</h4><p>哈希表是由数组+链表+红黑树（JDK1.8增加了红黑树部分）实现的           </p><p><img src="https://ws1.sinaimg.cn/mw690/006lnyTwly1g71nga051uj30pi0p4q5i.jpg" alt><br>存储流程图    </p><pre><code>JDK1.8引入红黑树大程度优化了HashMap的性能，那么对于我们来讲保证HashSet集合元素的唯一，其实就是根据对象的hashCode和equals方法来决定的。如果我们往集合中存放自定义的对象，那么保证其唯一，就必须复写hashCode和equals方法建立属于当前对象的比较方式。</code></pre><h4 id="2-3-LinkedHashSet"><a href="#2-3-LinkedHashSet" class="headerlink" title="2.3 LinkedHashSet"></a>2.3 LinkedHashSet</h4><p>在HashSet下面有一个子类<code>java.util.LinkedHashSet</code>，它是链表和哈希表组合的一个数据存储结构。</p><h4 id="2-4-可变参数"><a href="#2-4-可变参数" class="headerlink" title="2.4 可变参数"></a>2.4 可变参数</h4><p>使用前提:<br>当方法的参数列表数据类型已经确定,但是参数的个数不确定,就可以使用可变参数.<br>使用格式:定义方法时使用<br>    <code>修饰符 返回值类型 方法名(数据类型...变量名){}</code><br>可变参数原理:<br>可变参数底层是一个数组,根据传递参数个数不同,会创建不同长度的数组,来存储这些参数,传递参数的个数可以是0个到多个</p><h3 id="3-Collections-类"><a href="#3-Collections-类" class="headerlink" title="3 Collections 类"></a>3 Collections 类</h3><h4 id="3-1-常用方法"><a href="#3-1-常用方法" class="headerlink" title="3.1 常用方法"></a>3.1 常用方法</h4><ul><li><p>java.utils.Collections`是集合工具类，用来对集合进行操作。部分方法如下：</p></li><li><p><code>public static &lt;T&gt; boolean addAll(Collection&lt;T&gt; c, T... elements)</code>:往集合中添加一些元素。</p></li><li><p><code>public static void shuffle(List&lt;?&gt; list) 打乱顺序</code>:打乱集合顺序。</p></li><li><p><code>public static &lt;T&gt; void sort(List&lt;T&gt; list)</code>:将集合中元素按照默认规则排序。</p></li><li><p><code>public static &lt;T&gt; void sort(List&lt;T&gt; list，Comparator&lt;? super T&gt; )</code>:将集合中元素按照指定规则排序。</p></li></ul><p>注意:<br>sort方法的使用前提 被排序的集合里边存储的元素,必须实现Comparable,重写接口中的方法CompareTo</p><p>排序规则 自己-参数 升序</p><h4 id="3-2-Comparator比较器"><a href="#3-2-Comparator比较器" class="headerlink" title="3.2 Comparator比较器"></a>3.2 Comparator比较器</h4><p>public int compare(String o1, String o2)`：比较其两个参数的顺序。</p><blockquote><p>两个对象比较的结果有三种：大于，等于，小于。</p><p>如果要按照升序排序，<br>则o1 小于o2，返回（负数），相等返回0，01大于02返回（正数）<br>如果要按照降序排序<br>则o1 小于o2，返回（正数），相等返回0，01大于02返回（负数）</p></blockquote><h4 id="3-3-Comparable和Comparator两个接口的区别"><a href="#3-3-Comparable和Comparator两个接口的区别" class="headerlink" title="3.3 Comparable和Comparator两个接口的区别"></a>3.3 Comparable和Comparator两个接口的区别</h4><p><strong>Comparable</strong>：强行对实现它的每个类的对象进行整体排序。这种排序被称为类的自然排序，类的compareTo方法被称为它的自然比较方法。只能在类中实现compareTo()一次，不能经常修改类的代码实现自己想要的排序。实现此接口的对象列表（和数组）可以通过Collections.sort（和Arrays.sort）进行自动排序，对象可以用作有序映射中的键或有序集合中的元素，无需指定比较器。</p><p><strong>Comparator</strong>强行对某个对象进行整体排序。可以将Comparator 传递给sort方法（如Collections.sort或 Arrays.sort），从而允许在排序顺序上实现精确控制。还可以使用Comparator来控制某些数据结构（如有序set或有序映射）的顺序，或者为那些没有自然顺序的对象collection提供排序。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> java基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> List集合 </tag>
+            
+            <tag> Set集合 </tag>
+            
+            <tag> Collections工具类 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Java基础语法（二）</title>
       <link href="/2019/09/16/java-ji-chu-er/"/>
       <url>/2019/09/16/java-ji-chu-er/</url>

@@ -4,11 +4,15 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Java基础语法（二）, edder Blog">
-    <meta name="description" content="1.封装性1.1 封装概念封装就是将一些细节信息隐藏起来，对于外界不可见。若需要访问某个属性，提供公共方法对其访问。   
-1.2 封装的步骤
-使用private关键字来修饰成员变量。           
-对需要访问的成员变量，提供对应的">
+    <meta name="keywords" content="List集合,Set集合,Collections工具类, edder Blog">
+    <meta name="description" content="1 List接口1.1 List介绍特点:            
+
+List元素有序
+List带索引
+集合中可以有重复元素,通过元素的equals方法来比较是否为重复元素
+
+1.2 List常用方法
+public void add(int">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +20,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Java基础语法（二） | edder Blog</title>
+    <title>List集合,Set集合,Collections工具类 | edder Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -242,13 +246,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Java基础语法（二）
+                        List集合,Set集合,Collections工具类
                     </div>
                 </div>
             </div>
@@ -359,32 +363,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/封装性/" target="_blank">
-                                <span class="chip bg-color">封装性</span>
+                            <a href="/tags/List集合/" target="_blank">
+                                <span class="chip bg-color">List集合</span>
                             </a>
                         
-                            <a href="/tags/继承/" target="_blank">
-                                <span class="chip bg-color">继承</span>
+                            <a href="/tags/Set集合/" target="_blank">
+                                <span class="chip bg-color">Set集合</span>
                             </a>
                         
-                            <a href="/tags/多态/" target="_blank">
-                                <span class="chip bg-color">多态</span>
-                            </a>
-                        
-                            <a href="/tags/接口/" target="_blank">
-                                <span class="chip bg-color">接口</span>
-                            </a>
-                        
-                            <a href="/tags/抽象类/" target="_blank">
-                                <span class="chip bg-color">抽象类</span>
-                            </a>
-                        
-                            <a href="/tags/final关键字/" target="_blank">
-                                <span class="chip bg-color">final关键字</span>
-                            </a>
-                        
-                            <a href="/tags/内部类/" target="_blank">
-                                <span class="chip bg-color">内部类</span>
+                            <a href="/tags/Collections工具类/" target="_blank">
+                                <span class="chip bg-color">Collections工具类</span>
                             </a>
                         
                     </div>
@@ -423,260 +411,73 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="1-封装性"><a href="#1-封装性" class="headerlink" title="1.封装性"></a>1.封装性</h3><h4 id="1-1-封装概念"><a href="#1-1-封装概念" class="headerlink" title="1.1 封装概念"></a>1.1 封装概念</h4><p>封装就是将一些细节信息隐藏起来，对于外界不可见。若需要访问某个属性，提供公共方法对其访问。   </p>
-<h4 id="1-2-封装的步骤"><a href="#1-2-封装的步骤" class="headerlink" title="1.2 封装的步骤"></a>1.2 封装的步骤</h4><ol>
-<li>使用private关键字来修饰成员变量。           </li>
-<li>对需要访问的成员变量，提供对应的一对get方法丶set方法。    <h4 id="1-3-封装性在JAVA中的体现"><a href="#1-3-封装性在JAVA中的体现" class="headerlink" title="1.3 封装性在JAVA中的体现"></a>1.3 封装性在JAVA中的体现</h4></li>
-<li>方法就是一种封装            </li>
-<li>关键字private也是一种封装        <h4 id="1-4-private关键字"><a href="#1-4-private关键字" class="headerlink" title="1.4 private关键字"></a>1.4 private关键字</h4></li>
-<li>private是一个权限修饰符，代表最小权限。</li>
-<li>可以修饰成员变量和成员方法。</li>
-<li>被private修饰后的成员变量和成员方法，只在本类中才能访问。           <h4 id="1-5-this关键字"><a href="#1-5-this关键字" class="headerlink" title="1.5 this关键字"></a>1.5 this关键字</h4></li>
-<li>当方法的局部变量和类的成员变量重名时，根据就近原则优先使用局部变量。</li>
-<li>当需要访问成员变量时需要使用this关键字</li>
-<li>通过谁调用的方法谁就是this</li>
-<li>this在重名的情况下起到区分的效果</li>
-</ol>
-<h4 id="1-6-构造方法"><a href="#1-6-构造方法" class="headerlink" title="1.6 构造方法"></a>1.6 构造方法</h4><p>构造方法是专门用来创建对象的方法，当我们通过关键字new来创建对象，其实就是在调用构造方法<br>格式：</p>
-<pre><code>public 类名称（参数类型 参数名称）｛
-方法体
-｝</code></pre><p>注意事项：</p>
+                <h3 id="1-List接口"><a href="#1-List接口" class="headerlink" title="1 List接口"></a>1 List接口</h3><h4 id="1-1-List介绍"><a href="#1-1-List介绍" class="headerlink" title="1.1 List介绍"></a>1.1 List介绍</h4><p>特点:            </p>
 <ol>
-<li>构造方法的名称必须和所在的类名完全一样。</li>
-<li>构造方法没有返回值。</li>
-<li>若没有构造方法，编译器会默认赠送一个构造方法。</li>
+<li>List元素有序</li>
+<li>List带索引</li>
+<li>集合中可以有重复元素,通过元素的equals方法来比较是否为重复元素</li>
 </ol>
-<h3 id="2-继承性"><a href="#2-继承性" class="headerlink" title="2.继承性"></a>2.继承性</h3><p>继承是多态的前提没有继承就没有多态<br>继承主要解决的问题就是：共性抽取<br>定义格式：          </p>
-<pre><code>public class 父类 {
-
-}
-public class 子类 extends 父类 {
-
-}</code></pre><h4 id="2-1-nbsp-成员变量重名"><a href="#2-1-nbsp-成员变量重名" class="headerlink" title="2.1&nbsp;成员变量重名"></a>2.1&nbsp;成员变量重名</h4><p>直接通过子类对象访问成员变量;<br>    等号左边是谁，就优先用谁，没有则向上找。<br>间接通过成员方法访问成员变量<br>    该方法属于谁，就优先用谁，没有则向上找。              </p>
-<h4 id="2-2-nbsp-super关键字"><a href="#2-2-nbsp-super关键字" class="headerlink" title="2.2&nbsp;super关键字"></a>2.2&nbsp;super关键字</h4><p>三种用法<br>1.在子类的成员方法中，访问父类的成员变量。<br>2.在子类的成员方法中，访问父类的成员方法。<br>3.在子类的构造方法中，访问父类的构造方法。</p>
-<table>
-<thead>
-<tr>
-<th>局部变量</th>
-<th>直接写</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>本类的成员变量</td>
-<td>this.成员变量名</td>
-</tr>
-<tr>
-<td>父类成员变量</td>
-<td>super.成员变量名</td>
-</tr>
-</tbody></table>
-<h4 id="2-3-nbsp-重写"><a href="#2-3-nbsp-重写" class="headerlink" title="2.3&nbsp;重写"></a>2.3&nbsp;重写</h4><p>子类继承父类时 子类重写父类的方法 方法名称一样参数列表也一样<br><strong>注意事项</strong>：             </p>
+<h4 id="1-2-List常用方法"><a href="#1-2-List常用方法" class="headerlink" title="1.2 List常用方法"></a>1.2 List常用方法</h4><ul>
+<li><code>public void add(int index, E element)</code>: 将指定的元素，添加到该集合中的指定位置上。</li>
+<li><code>public E get(int index)</code>:返回集合中指定位置的元素。</li>
+<li><code>public E remove(int index)</code>: 移除列表中指定位置的元素, 返回的是被移除的元素。</li>
+<li><code>public E set(int index, E element)</code>:用指定元素替换集合中指定位置的元素,返回值的更新前的元素。</li>
+</ul>
+<h4 id="1-3-ArrayList集合"><a href="#1-3-ArrayList集合" class="headerlink" title="1.3 ArrayList集合"></a>1.3 ArrayList集合</h4><p><code>java.util.ArrayList</code><br>特点:<br>增删慢,查询快,存储结构为数组结构</p>
+<h4 id="1-4-LinkedList集合"><a href="#1-4-LinkedList集合" class="headerlink" title="1.4 LinkedList集合"></a>1.4 LinkedList集合</h4><p><code>java.util.LinkedList</code><br>特点:<br>增删快,存储结构为双向链表<br><img src="https://ws1.sinaimg.cn/mw690/006lnyTwly1g71mjv6uafj30jo08rt8r.jpg" alt></p>
+<h5 id="1-4-1-常用方法"><a href="#1-4-1-常用方法" class="headerlink" title="1.4.1 常用方法"></a>1.4.1 常用方法</h5><ul>
+<li><code>public void addFirst(E e)</code>:将指定元素插入此列表的开头。</li>
+<li><code>public void addLast(E e)</code>:将指定元素添加到此列表的结尾。</li>
+<li><code>public E getFirst()</code>:返回此列表的第一个元素。</li>
+<li><code>public E getLast()</code>:返回此列表的最后一个元素。</li>
+<li><code>public E removeFirst()</code>:移除并返回此列表的第一个元素。</li>
+<li><code>public E removeLast()</code>:移除并返回此列表的最后一个元素。</li>
+<li><code>public E pop()</code>:从此列表所表示的堆栈处弹出一个元素。</li>
+<li><code>public void push(E e)</code>:将元素推入此列表所表示的堆栈。</li>
+<li><code>public boolean isEmpty()</code>：如果列表不包含元素，则返回true。</li>
+</ul>
+<h3 id="2-Set接口"><a href="#2-Set接口" class="headerlink" title="2 Set接口"></a>2 Set接口</h3><p>特点: </p>
 <ol>
-<li>用@Override来检测是不是有效的覆盖重写</li>
-<li>子类方法的返回值必须小于等于父类方法的返回值范围。</li>
-<li>子类方法的权限必须大于等于父类方法的权限修饰符。</li>
+<li>元素不重复</li>
+<li>没有索引也不能用for循环遍历,与Collection类似.</li>
 </ol>
-<h4 id="2-4-nbsp-继承中构造方法的访问特点"><a href="#2-4-nbsp-继承中构造方法的访问特点" class="headerlink" title="2.4&nbsp;继承中构造方法的访问特点"></a>2.4&nbsp;继承中构造方法的访问特点</h4><ol>
-<li>子类必须调用父类的构造方法。</li>
-<li>子类构造方法当中有一个默认隐含的“super()”调用，一定先调用父类构造，再执行子类构造。</li>
-<li>子类构造可以通过super关键字调用父类重载构造。</li>
-<li>不能一个子类构造调用多次super构造。               </li>
-</ol>
-<p><strong>总结</strong>：子类必须调用父类的构造方法，不写则赠送super();<br>&emsp;&emsp;&emsp;写了则用写的指定的super调用，super只能有一个，还必须是第一个。</p>
-<h4 id="2-5this关键字用法"><a href="#2-5this关键字用法" class="headerlink" title="2.5this关键字用法"></a>2.5this关键字用法</h4><ol>
-<li>在本来的成员方法中，访问本类的成员变量。</li>
-<li>在本类的成员方法中，访问本类的另一个成员方法。</li>
-<li>在本类的构造方法中，访问本类的另一个构造方法。（A.注意this（…）调用也必须是构造方法的第一个语句，唯一一个。B.super和this两种构造，不能同时调用。）</li>
-</ol>
-<h4 id="2-6-nbsp-this与super的内存图"><a href="#2-6-nbsp-this与super的内存图" class="headerlink" title="2.6&nbsp;this与super的内存图"></a>2.6&nbsp;this与super的内存图</h4><p><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/03-super%E4%B8%8Ethis%E7%9A%84%E5%86%85%E5%AD%98%E5%9B%BE.png" alt></p>
-<h4 id="2-7-nbsp-继承的三个特点"><a href="#2-7-nbsp-继承的三个特点" class="headerlink" title="2.7&nbsp;继承的三个特点"></a>2.7&nbsp;继承的三个特点</h4><ol>
-<li>单继承：一个类的直接父类只能有唯一一个。</li>
-<li>多级继承：一个类的父类还可以有父类。</li>
-<li>多子类：一个父类可以拥有很多子类。</li>
-</ol>
-<h3 id="3-多态性"><a href="#3-多态性" class="headerlink" title="3. 多态性"></a>3. 多态性</h3><h4 id="3-1-多态概念"><a href="#3-1-多态概念" class="headerlink" title="3.1 多态概念"></a>3.1 多态概念</h4><p>父类引用指向子类对象，就是对象的多样性。</p>
-<pre><code>代码当中体现多态性，其实就是一句话，父类引用指向子类对象。
-格式：
-父类名称 对象名 = new 子类名称();
-或者:
-接口名称 对象名 = new 实现类名称();</code></pre><h4 id="3-2-多态中访问成员变量"><a href="#3-2-多态中访问成员变量" class="headerlink" title="3.2 多态中访问成员变量"></a>3.2 多态中访问成员变量</h4><ol>
-<li>直接通过对象名称访问成员变量，看等号左边是谁，优先用谁，没有则向上找。         </li>
-<li>间接通过成员方法访问成员变量，看方法属于谁，优先用谁，没有则向上找。</li>
-</ol>
-<h4 id="3-3-多态中访问成员方法"><a href="#3-3-多态中访问成员方法" class="headerlink" title="3.3 多态中访问成员方法"></a>3.3 多态中访问成员方法</h4><ol>
-<li>看new的是谁，就优先用谁，没有则向上找。【编译看左边，运行看右边】</li>
-</ol>
-<h4 id="3-4-多态使用好处"><a href="#3-4-多态使用好处" class="headerlink" title="3.4 多态使用好处"></a>3.4 多态使用好处</h4><p>无论右边new的时候换成哪个子类对象，等号左边调用方法都不会变化。</p>
-<h4 id="3-5-对象的上转型"><a href="#3-5-对象的上转型" class="headerlink" title="3.5 对象的上转型"></a>3.5 对象的上转型</h4><p>格式：父类名称 对象名 = new 子类名称();<br>含义：右侧创建一个子类对象，把它当做父类对象来使用。<br>注意事项：向上转型一定是安全的。从小范围转向了大范围。<br>对象一旦向上转型为父类，那么就无法调用子类原本特有的内容。</p>
-<h4 id="3-6-对象的下转型"><a href="#3-6-对象的下转型" class="headerlink" title="3.6 对象的下转型"></a>3.6 对象的下转型</h4><p>其实是一个【还原】的动作<br>格式 子类对象名称 对象名 = (子类名称)父类对象;<br>概念：将父类对象还原成为本来的子类对象。</p>
-<h4 id="3-7-instanceof判断类型"><a href="#3-7-instanceof判断类型" class="headerlink" title="3.7 instanceof判断类型"></a>3.7 instanceof判断类型</h4><p>格式：<br>对象 instanceof 类名称<br>这将会得到一个boolean值结果，也就是判断前面的对象能不能当做后面类型的实例。</p>
-<h3 id="4-抽象类"><a href="#4-抽象类" class="headerlink" title="4. 抽象类"></a>4. 抽象类</h3><h4 id="4-1-抽象方法"><a href="#4-1-抽象方法" class="headerlink" title="4.1 抽象方法"></a>4.1 抽象方法</h4><p>如果父类中的方法不确定如何让进行方法体的实现，那么这个方法就是抽象方法，动物吃东西，图形算面积。</p>
-<h4 id="4-2-抽象类"><a href="#4-2-抽象类" class="headerlink" title="4.2 抽象类"></a>4.2 抽象类</h4><p>抽象方法所在的类就是抽象类。</p>
-<h4 id="4-3-抽象方法写法"><a href="#4-3-抽象方法写法" class="headerlink" title="4.3 抽象方法写法"></a>4.3 抽象方法写法</h4><p>方法前加上abstract关键字去掉大括号 </p>
-<h4 id="4-4-如何使用抽象类和抽象方法"><a href="#4-4-如何使用抽象类和抽象方法" class="headerlink" title="4.4 如何使用抽象类和抽象方法"></a>4.4 如何使用抽象类和抽象方法</h4><ol>
-<li>不能直接创建抽象类对象。</li>
-<li>必须用一个子类来继承父类。</li>
-<li>子类必须重写抽象父类当中所有的抽象方法。</li>
-<li>创建子类对象进行使用。</li>
-</ol>
-<h4 id="4-5-注意事项"><a href="#4-5-注意事项" class="headerlink" title="4.5 注意事项"></a>4.5 注意事项</h4><ol>
-<li>抽象类不能创建对象，如果创建，编译无法通过而报错。只能创建其非抽象子类的对象。</li>
-<li>抽象类中，可以有构造方法，是供子类创建对象时，初始化父类成员使用的。</li>
-<li>抽象类中，不一定包含抽象方法，但是有抽象方法的类必定是抽象类。</li>
-<li>抽象类的子类，必须重写抽象父类中所有的抽象方法，否则，编译无法通过而报错。除非该子类也是抽象类。</li>
-</ol>
-<h3 id="5-接口"><a href="#5-接口" class="headerlink" title="5. 接口"></a>5. 接口</h3><h4 id="5-1-概念"><a href="#5-1-概念" class="headerlink" title="5.1 概念"></a>5.1 概念</h4><p>接口就是一种公共的规范标准。<br>接口就是多个类的公共规范。<br>接口是一种引用数据类型，最重要的内容就是其中的抽象方法        </p>
-<pre><code>接口定义           
-public interface 接口名称{   
-    //接口内容        
-}</code></pre><pre><code>接口中抽象方法定义
-public abstract 返回值类型 方法名称(参数列表);</code></pre><p>注意：public abstract 是固定写法 可以省略；<br>备注：换成了关键字interface之后,编译生成的字节码文件仍然是；.java –&gt; .class         </p>
-<h4 id="5-2-接口中的内容"><a href="#5-2-接口中的内容" class="headerlink" title="5.2 接口中的内容"></a>5.2 接口中的内容</h4><p>如果是 Java 7  那么接口中可以包含的内容有   </p>
+<h4 id="2-1-HashSet集合介绍"><a href="#2-1-HashSet集合介绍" class="headerlink" title="2.1 HashSet集合介绍"></a>2.1 HashSet集合介绍</h4><p><code>java.util.HashSet</code><br>特点:  </p>
 <ol>
-<li>常量</li>
-<li>抽象方法          </li>
+<li>哈希表结构速度快</li>
+<li>是一个无序集合,存储元素和取出元素的顺序可能不一样.</li>
 </ol>
-<p>如果是 Java 8  那么接口中可以包含的内容有</p>
-<ol start="3">
-<li>默认方法         </li>
-<li>静态方法     </li>
-</ol>
-<p>如果是 Java 9  那么接口中可以包含的内容有</p>
-<ol start="5">
-<li>私有方法     </li>
-</ol>
-<p>默认方法<br>使用默认方法，如果实现类里面没有，会向上找接口。</p>
-<pre><code>从Java 8开始， 接口里允许定义默认方法  
-格式：      
-public defult 返回值类型 方法名称(参数列表){
-    方法体
-}</code></pre><p>静态方法<br>通过接口名称直接调用静态方法。<br>不能通过接口实现类的对象来调用接口中的静态方法。</p>
-<pre><code>从Java 8开始， 接口里允许定义静态方法  
-格式：      
-public static 返回值类型 方法名称(参数列表){
-    方法体
-}
-</code></pre><p>私有方法</p>
-<ol>
-<li>普通私有方法，解决多个默认方法之间重复代码问题。</li>
-</ol>
-<pre><code>格式：
-private 返回值类型 方法名称(参数列表){
-    方法体
-}</code></pre><ol start="2">
-<li>静态私有方法，解决多个精要方法之间重复代码问题。<pre><code>格式：
-private static  返回值类型 方法名称(参数列表){
- 方法体
-}</code></pre></li>
-</ol>
-<pre><code>格式：
-private 返回值类型 方法名称(参数列表){
-    方法体
-}</code></pre><h4 id="5-3-接口使用步骤"><a href="#5-3-接口使用步骤" class="headerlink" title="5.3 接口使用步骤"></a>5.3 接口使用步骤</h4><ol>
-<li>接口不能直接使用，必须有一个实现类来实现该接口。</li>
-</ol>
-<pre><code>格式：
-public class 实现类名称 implements 接口名称 ｛
-
-｝</code></pre><ol start="2">
-<li>接口的实现类必须重写（实现）接口中所有的抽象方法。<br>实现：去掉avstract关键字，加上方法体大括号。</li>
-<li>创建实现类的对象，进行使用。</li>
-</ol>
-<p>注意事项：<br>如果实现类并没有覆盖重写接口中所有的抽象方法，那么这个实现类自己就必须是抽象类。</p>
-<h4 id="5-4-接口定义“成员变量”"><a href="#5-4-接口定义“成员变量”" class="headerlink" title="5.4 接口定义“成员变量”"></a>5.4 接口定义“成员变量”</h4><p>接口中可以定义”成员变量”，但是必须使用 public static final 三个关键字进行修饰<br>从效果上看，这其实就是接口的【常量】。</p>
-<pre><code>格式：
-public static final 数据类型 常量名称 = 数据值；</code></pre><p>注意：<br>一旦使用final关键字进行修饰，说明不可改变，<br>接口当中的常量，可以省略 public static final ；注意，不写也照样是这样。<br>接口中的常量必须进行赋值，不能不赋值。<br>接口中常量的名称使用完全大写的字母。用下划线进行分割。（推荐命名规则）                 </p>
-<h4 id="5-5-接口注意事项"><a href="#5-5-接口注意事项" class="headerlink" title="5.5 接口注意事项"></a>5.5 接口注意事项</h4><ol>
-<li>接口不能有静态代码块或者构造方法。</li>
-<li>一个类的直接父类是唯一的，但是一个类可以同时实现多个接口。</li>
-</ol>
-<pre><code>格式：
- public class MyInterfaceImpl implements MyInterfaceA, MyInterfaceB {
-    //重写抽象方法
-}</code></pre><ol start="3">
-<li>如果实现类所实现的多个接口当中，存在重复的抽象方法，那么只需要重写一次即可。</li>
-<li>如果实现类没有覆盖重写所有接口当中的所有抽象方法，那么实现类就是一个抽象类。</li>
-<li>如果实现类实现的多个接口当中，存在重复的默认方法，那么实现类一定要对冲突的默认方法进行覆盖重写。</li>
-<li>一个类如果直接父类当中的方法，和接口当中的默认方法产生了冲突，优先使用父类中的方法。</li>
-</ol>
-<h4 id="5-6-类与接口"><a href="#5-6-类与接口" class="headerlink" title="5.6 类与接口"></a>5.6 类与接口</h4><ol>
-<li>类与类之间是单继承的。</li>
-<li>类与接口之间是多实现的，一个类可以实现多个接口。</li>
-<li>接口与接口之间是多继承的。<br>注意事项：</li>
-<li>多个父接口中的默认方法重复。那么子接口必须进行默认方法的覆盖重写，【而且带着default关键字】</li>
-</ol>
-<h3 id="6-final关键字"><a href="#6-final关键字" class="headerlink" title="6. final关键字"></a>6. final关键字</h3><p>代表最终，不可改变的<br>常见的四种用法：</p>
-<ol>
-<li>可以修饰一个类</li>
-<li>可以修饰一个方法</li>
-<li>可以修饰一个局部变量</li>
-<li>可以修饰一个成员变量</li>
-</ol>
-<h4 id="6-1-final修饰类"><a href="#6-1-final修饰类" class="headerlink" title="6.1 final修饰类"></a>6.1 final修饰类</h4><pre><code>当final关键字用来修饰一个类的时候
-public final class 类名称 {
-    //....
-}
-含义：当前这个类不能有任何子类(太监类)</code></pre><h4 id="6-2-final修饰方法"><a href="#6-2-final修饰方法" class="headerlink" title="6.2 final修饰方法"></a>6.2 final修饰方法</h4><pre><code>当final关键字用来修饰一个方法的时候，这个方法就是最终方法，也就是不能被覆盖重写。
-
-格式：
-修饰符 final 返回值类型 方法名称(参数列表) ｛
-    //方法体
-｝</code></pre><p>对于类丶方法来说abstract和final不能同时使用</p>
-<h4 id="6-3-final修饰局部变量"><a href="#6-3-final修饰局部变量" class="headerlink" title="6.3 final修饰局部变量"></a>6.3 final修饰局部变量</h4><p>一旦使用final用来修饰局部变量，那么这个变量就不能进行更改。<br>    “一次赋值，终生不变”</p>
-<pre><code>final int num;
-    num=3</code></pre><p>对于基本类型来说，不可变说的是变量当中的数据不可改变<br>对于引用类型来说，不可变说的是变量当中的地址值不可改变    </p>
-<h4 id="6-4-final修饰成员变量"><a href="#6-4-final修饰成员变量" class="headerlink" title="6.4 final修饰成员变量"></a>6.4 final修饰成员变量</h4><p>对于成员变量来说，如果使用final关键字修饰，那么这个变量也照样是不可变。</p>
-<ol>
-<li>由于成员变量具有默认值，所以用了final之后必须手动赋值，不会再给默认值了。</li>
-<li>对于fina的成员变量，要么使用直接赋值，要么通过构造方法赋值。 二者选其一。</li>
-<li>必须保证类当中所有重载的构造方法，都最终会对final的成员变量进行赋值。</li>
-</ol>
-<h3 id="7-权限修饰符"><a href="#7-权限修饰符" class="headerlink" title="7. 权限修饰符"></a>7. 权限修饰符</h3><p>Java中有四种权限修饰符            </p>
-<p>public &gt; protected &gt; (default) &gt; private                               </p>
-<p>注意 :(default)并不是关键字“default”，而是根本不写。<br><img src="https://raw.githubusercontent.com/edderqin/picflod/master/img/JAVA2_03.png" alt></p>
-<h3 id="8-内部类"><a href="#8-内部类" class="headerlink" title="8. 内部类"></a>8. 内部类</h3><p>8.1 概念<br>如果一个事物包含另一个事物，那么这就是一个类内部包含另一个类。<br>例如：人体和心脏的关系。<br>分类：</p>
-<ol>
-<li>成员内部类</li>
-<li>局部内部类(包含匿名内部类)</li>
-</ol>
-<h4 id="8-2-成员内部类"><a href="#8-2-成员内部类" class="headerlink" title="8.2 成员内部类"></a>8.2 成员内部类</h4><p>成员内部类的定义格式</p>
-<pre><code>修饰符 class 外部类名称 {
-    修饰符 class 内部类名称 {
-        //...
-    }
-    //...
-}</code></pre><p>注意：内用外，可以随意访问；外用内，需要内部类对象。</p>
-<p>使用内部类的两种方式</p>
-<ol>
-<li>间接方式：在外部类的方法当中，使用内部类；然后main只是调用外部类的方法。</li>
-<li>直接方式: 公式：外.内 </li>
-</ol>
-<pre><code>外部类名称.内部类名称 对象名 = new 外部类名称().new 内部类名称();</code></pre><p>内部类和外部类并不是继承关系       </p>
-<p>如果出现了重名情况</p>
-<pre><code>Outer.this.成员变量名 //内部类方法中访问外部类成员变量</code></pre><h4 id="8-3-局部内部类"><a href="#8-3-局部内部类" class="headerlink" title="8.3 局部内部类"></a>8.3 局部内部类</h4><p>如果一个类是定义在一个方法内部的，那么这就是一个局部内部类。<br>“局部”：只有当前所属方法才能使用它，出了这个方法外面就不能用了。</p>
-<pre><code>定义格式
-修饰符 class 外部类名称 {
-    修饰符 返回值类型 外部类方法名称(参数列表) {
-        class 局部内部类名称{
-
-        }
-    }
-}</code></pre><p>注意：局部内部类，如果希望访问所以在方法的局部变量，那么这个局部变量必须是【有效的final的】<br>备注：从Java 8+开始，只要局部变量事实不变，那么final关键字可以省略。</p>
-<h4 id="8-4-权限修饰符规则"><a href="#8-4-权限修饰符规则" class="headerlink" title="8.4 权限修饰符规则"></a>8.4 权限修饰符规则</h4><ol>
-<li>外部类：public / (default)</li>
-<li>成员内部类：public / protected / (default) /private</li>
-<li>局部内部类：什么都不能写</li>
-</ol>
-<h4 id="8-5-匿名内部类"><a href="#8-5-匿名内部类" class="headerlink" title="8.5 匿名内部类"></a>8.5 匿名内部类</h4><p>如果接口的实现类(或者是父类的子类)只需要使用唯一的一次。<br>那么这种情况就可以省略掉该类的定义，而改为使用【匿名内部类】。</p>
-<pre><code>匿名内部类的定义格式：
-接口名称 对象名 = new 接口名称() {
-    //覆盖重写接口中所有抽象方法
-};</code></pre><p>注意事项：</p>
-<ol>
-<li>匿名内部类，在创建对象的时候，只能使用唯一的一次。</li>
-<li>使用匿名内部类，但不是匿名对象，匿名内部类省略的是类名。</li>
-</ol>
-<p>类作为成员变量类型<br>接口也可以作为成员变量类型<br>成员变量可以用任何一种类</p>
+<p>哈希值:  是一个十进制的整数,由系统随机给出(就是对象的地址值,是一个逻辑地址,是模拟出来得到地址,不是数据实际存储的物理地址)<br>在Object类有一个方法,可以获取对象的哈希吗值</p>
+<pre><code>public native  int hashCode()
+//native代表该方法调用的是本地操作系统的方法</code></pre><p><img src="https://ws1.sinaimg.cn/mw690/006lnyTwly1g71ng9r5bqj30wf0famyf.jpg" alt></p>
+<h4 id="2-2-HashSet集合存储数据的结构"><a href="#2-2-HashSet集合存储数据的结构" class="headerlink" title="2.2 HashSet集合存储数据的结构"></a>2.2 HashSet集合存储数据的结构</h4><p>哈希表是由数组+链表+红黑树（JDK1.8增加了红黑树部分）实现的           </p>
+<p><img src="https://ws1.sinaimg.cn/mw690/006lnyTwly1g71nga051uj30pi0p4q5i.jpg" alt><br>存储流程图    </p>
+<pre><code>JDK1.8引入红黑树大程度优化了HashMap的性能，
+那么对于我们来讲保证HashSet集合元素的唯一，
+其实就是根据对象的hashCode和equals方法来决定的。
+如果我们往集合中存放自定义的对象，那么保证其唯一，
+就必须复写hashCode和equals方法建立属于当前对象的比较方式。</code></pre><h4 id="2-3-LinkedHashSet"><a href="#2-3-LinkedHashSet" class="headerlink" title="2.3 LinkedHashSet"></a>2.3 LinkedHashSet</h4><p>在HashSet下面有一个子类<code>java.util.LinkedHashSet</code>，它是链表和哈希表组合的一个数据存储结构。</p>
+<h4 id="2-4-可变参数"><a href="#2-4-可变参数" class="headerlink" title="2.4 可变参数"></a>2.4 可变参数</h4><p>使用前提:<br>当方法的参数列表数据类型已经确定,但是参数的个数不确定,就可以使用可变参数.<br>使用格式:定义方法时使用<br>    <code>修饰符 返回值类型 方法名(数据类型...变量名){}</code><br>可变参数原理:<br>可变参数底层是一个数组,根据传递参数个数不同,会创建不同长度的数组,来存储这些参数,传递参数的个数可以是0个到多个</p>
+<h3 id="3-Collections-类"><a href="#3-Collections-类" class="headerlink" title="3 Collections 类"></a>3 Collections 类</h3><h4 id="3-1-常用方法"><a href="#3-1-常用方法" class="headerlink" title="3.1 常用方法"></a>3.1 常用方法</h4><ul>
+<li><p>java.utils.Collections`是集合工具类，用来对集合进行操作。部分方法如下：</p>
+</li>
+<li><p><code>public static &lt;T&gt; boolean addAll(Collection&lt;T&gt; c, T... elements)</code>:往集合中添加一些元素。</p>
+</li>
+<li><p><code>public static void shuffle(List&lt;?&gt; list) 打乱顺序</code>:打乱集合顺序。</p>
+</li>
+<li><p><code>public static &lt;T&gt; void sort(List&lt;T&gt; list)</code>:将集合中元素按照默认规则排序。</p>
+</li>
+<li><p><code>public static &lt;T&gt; void sort(List&lt;T&gt; list，Comparator&lt;? super T&gt; )</code>:将集合中元素按照指定规则排序。</p>
+</li>
+</ul>
+<p>注意:<br>sort方法的使用前提 被排序的集合里边存储的元素,必须实现Comparable,重写接口中的方法CompareTo</p>
+<p>排序规则 自己-参数 升序</p>
+<h4 id="3-2-Comparator比较器"><a href="#3-2-Comparator比较器" class="headerlink" title="3.2 Comparator比较器"></a>3.2 Comparator比较器</h4><p>public int compare(String o1, String o2)`：比较其两个参数的顺序。</p>
+<blockquote>
+<p>两个对象比较的结果有三种：大于，等于，小于。</p>
+<p>如果要按照升序排序，<br>则o1 小于o2，返回（负数），相等返回0，01大于02返回（正数）<br>如果要按照降序排序<br>则o1 小于o2，返回（正数），相等返回0，01大于02返回（负数）</p>
+</blockquote>
+<h4 id="3-3-Comparable和Comparator两个接口的区别"><a href="#3-3-Comparable和Comparator两个接口的区别" class="headerlink" title="3.3 Comparable和Comparator两个接口的区别"></a>3.3 Comparable和Comparator两个接口的区别</h4><p><strong>Comparable</strong>：强行对实现它的每个类的对象进行整体排序。这种排序被称为类的自然排序，类的compareTo方法被称为它的自然比较方法。只能在类中实现compareTo()一次，不能经常修改类的代码实现自己想要的排序。实现此接口的对象列表（和数组）可以通过Collections.sort（和Arrays.sort）进行自动排序，对象可以用作有序映射中的键或有序集合中的元素，无需指定比较器。</p>
+<p><strong>Comparator</strong>强行对某个对象进行整体排序。可以将Comparator 传递给sort方法（如Collections.sort或 Arrays.sort），从而允许在排序顺序上实现精确控制。还可以使用Comparator来控制某些数据结构（如有序set或有序映射）的顺序，或者为那些没有自然顺序的对象collection提供排序。</p>
 
             </div>
             <hr>
@@ -832,9 +633,9 @@ public final class 类名称 {
             </div>
             <br>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">
-                    《Java基础语法（二）》
+                    《List集合,Set集合,Collections工具类》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/09/16/java-ji-chu-er/" property="cc:attributionName" rel="cc:attributionURL">
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/09/16/list-ji-he-set-ji-he-collections-gong-ju-lei/" property="cc:attributionName" rel="cc:attributionURL">
                 edder
             </a> 采用
             <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
@@ -875,7 +676,8 @@ public final class 类名称 {
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2019/09/16/list-ji-he-set-ji-he-collections-gong-ju-lei/">
                     <div class="card-image">
@@ -900,9 +702,9 @@ public void add(int
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-16
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-16
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -915,6 +717,7 @@ public void add(int
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -941,24 +744,22 @@ public void add(int
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/09/16/jian-dan-de-shu-ju-jie-gou/">
+                <a href="/2019/09/16/java-ji-chu-er/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="简单的数据结构">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="Java基础语法（二）">
                         
-                        <span class="card-title">简单的数据结构</span>
+                        <span class="card-title">Java基础语法（二）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            简单的数据结构栈
-栈：stack,又称堆栈，它是运算受限的线性表，其限制是仅允许在标的一端进行插入和删除操作，不允许在其他任何位置进行添加、查找、删除等操作。
-
-简单的说：采用该结构的集合，对元素的存取有如下的特点
-
-先进后出（即，存进去的
+                            1.封装性1.1 封装概念封装就是将一些细节信息隐藏起来，对于外界不可见。若需要访问某个属性，提供公共方法对其访问。   
+1.2 封装的步骤
+使用private关键字来修饰成员变量。           
+对需要访问的成员变量，提供对应的
                         
                     </div>
                     <div class="publish-info">
@@ -980,24 +781,32 @@ public void add(int
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/数组/" target="_blank">
-                        <span class="chip bg-color">数组</span>
+                    <a href="/tags/封装性/" target="_blank">
+                        <span class="chip bg-color">封装性</span>
                     </a>
                     
-                    <a href="/tags/栈/" target="_blank">
-                        <span class="chip bg-color">栈</span>
+                    <a href="/tags/继承/" target="_blank">
+                        <span class="chip bg-color">继承</span>
                     </a>
                     
-                    <a href="/tags/队列/" target="_blank">
-                        <span class="chip bg-color">队列</span>
+                    <a href="/tags/多态/" target="_blank">
+                        <span class="chip bg-color">多态</span>
                     </a>
                     
-                    <a href="/tags/红黑树/" target="_blank">
-                        <span class="chip bg-color">红黑树</span>
+                    <a href="/tags/接口/" target="_blank">
+                        <span class="chip bg-color">接口</span>
                     </a>
                     
-                    <a href="/tags/链表/" target="_blank">
-                        <span class="chip bg-color">链表</span>
+                    <a href="/tags/抽象类/" target="_blank">
+                        <span class="chip bg-color">抽象类</span>
+                    </a>
+                    
+                    <a href="/tags/final关键字/" target="_blank">
+                        <span class="chip bg-color">final关键字</span>
+                    </a>
+                    
+                    <a href="/tags/内部类/" target="_blank">
+                        <span class="chip bg-color">内部类</span>
                     </a>
                     
                 </div>
